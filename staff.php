@@ -114,7 +114,7 @@ body {
                 </nav>
             </div>
         </div>
-		</div>
+
             <!-- row -->
             <div class="staff2">
   <div class="staff-header">
