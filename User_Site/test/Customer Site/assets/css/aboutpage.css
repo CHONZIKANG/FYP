@@ -1,0 +1,96 @@
+.about {
+	font-family: Arial;
+	margin: 1;
+}
+
+.about p{
+	font-family: sans-serif;
+}
+.about h3{
+	font-weight: bold;
+}
+
+.about html{
+	box-sizing: border-box;
+}
+
+.about *, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.about .column{
+	float: left;
+	width: 33.2%;
+	margin-bottom: 16px;
+	padding: 0 15px;
+}
+
+.about .card{
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+	margin: 60px;
+}
+
+.about img{
+	width: 363px;
+	height: 400px;
+	object-fit: cover;
+}
+
+.about .about-info{
+	padding: 50px;
+	text-align: center;
+	background-color:#F4F6EC;
+	margin-top: 100px;
+}
+
+.about .container{
+	padding: 16px;
+}
+
+.about .role{
+	color: #867875;
+	font-weight: bold;
+}
+
+.about .button{
+	border: none;
+	padding: 1em 1.5em;
+	color: white;
+	background-color: #102b4e;
+	text-align: center;
+	cursor: pointer;
+	width: 100%;
+	text-transform: uppercase;
+	text-decoration: none;
+	box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.about a, a:hover, a:focus, a:active {
+      text-decoration: none;
+      color: inherit;
+}
+
+.about a:link{
+	text-decoration:none;
+}
+
+.about a:hover{text-decoration:underline;
+		color:purple;
+		font-weight:bold;
+		}
+
+.about a:visited{
+	text-decoration:none;
+}
+
+.about a:active{
+	text-decoration:underline;
+}
+
+@media screen and (max-width: 650px){
+.about 	.column{
+		width: 100%;
+		display: block;
+	}
+}
+

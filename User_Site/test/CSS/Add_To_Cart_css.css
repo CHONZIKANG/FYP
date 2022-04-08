@@ -1,0 +1,54 @@
+*{font-family:'Lato', sans-serif;}
+
+.addtocart
+{
+	
+	border-style:none;
+	background-color:#ffffff;
+	box-shadow: 0 10px 10px 0 rgb(0 0 0 / 10%);
+	width:1200px;
+	margin:64px auto;
+	padding: 27px 50px 32px;
+}
+
+
+#form
+{
+	padding:10px;
+
+}
+
+
+
+
+.container1
+{
+	border-bottom : 0.5px solid grey;
+
+}
+
+#section
+{
+	display: flex;
+	justify-content: center;
+}
+
+#form #checkout_btn
+{
+	padding: 10px 50px;
+	text-align:center;
+	font-size: 18px;
+	margin:2px;
+	color: #ffffff;
+	background-color: #102B4E;	
+	width: 188px;
+    height: 45px;
+    box-sizing: border-box;
+	text-decoration:none;
+}
+
+
+
+
+	
+	

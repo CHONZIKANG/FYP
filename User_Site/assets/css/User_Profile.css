@@ -1,0 +1,68 @@
+.u_profile *{font-family:'Lato', sans-serif;}
+
+.u_profile a:link, a:visited
+{
+	color:black;
+	text-decoration:none;
+
+}
+
+.u_profile #info
+{
+	width:1000px;
+	height: 600px;
+	overflow:auto;
+	background-color:#ffffff;
+	margin: auto;
+	padding: 0px 30px;
+}
+
+.u_profile #left
+{
+	float:left;
+	width:200px;
+	padding:5px;
+
+}
+
+.u_profile #right
+{
+	float:left;
+	padding:10px;	
+	border-left:0.0625rem solid #efefef;
+	width:650px;
+}
+
+.u_profile input[type="text"], input[type="email"], input[type="tel"] , input[type="date"]{
+
+	width: 60%;
+	height: 10px;
+	border: 1px black solid;
+	border-radius:2px;
+	font-size: 16px;
+	padding: 10px;
+	margin: 10px;
+	
+}
+
+.u_profile #title
+{
+    border-bottom: 0.0625rem solid #efefef;
+
+}
+
+.u_profile #save_btn
+{
+	padding: 10px 50px;
+	text-align:center;
+	font-size: 18px;
+	margin:auto;
+	color: #ffffff;
+	background-color: #102B4E;	
+}
+
+.u_profile a#sub
+{
+	font-size:14px;
+
+}

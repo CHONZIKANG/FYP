@@ -1,0 +1,55 @@
+.promote
+{
+	background-color: #1768b1;
+
+	padding:50px;
+}
+	 
+.promote iframe
+{
+	border: 3px solid #102b4e;
+	margin-top: 20px;
+} 
+.promote .onlinegrocery
+ {
+	float: right;
+	position: relative;
+	bottom: 280px;
+	margin-right: 100px;
+ }
+.promote .grocerydelivery
+ {
+	margin-left: 100px;
+ }
+.promote .quotes
+{	
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	border: 10px;
+	float: left;
+}
+.promote .container
+{
+	width: 730px;
+	margin: 20px auto;
+}
+.promote .scroll
+{
+	 margin: auto;
+	 width: 1200px;
+	 height: 800px;
+	 overflow-x: hidden;
+	 overflow-y: auto;
+	 border: 5px solid;
+	 border-color: #102b4e;
+	 text-align:justify;
+	 background-image: url('image/Avengers.jpg');
+	 font-weight: bold;
+	 box-shadow: 0 10px 10px 0 rgb(0 0 0 / 10%);
+}
+.promote h2
+{
+	border: 5px;
+	background-color: #F4F6EC;
+
+}

@@ -1,0 +1,80 @@
+.paragraph{
+	font-family: 'Roboto', sans-serif;
+	font-weight: bold;
+}
+
+.paragraph p{
+	font-family: arial;
+}
+
+.paragraph span{
+	color: grey;
+	font-weight: bold;
+}
+
+.paragraph input[type=text], textarea, select{
+	width: 700px;
+	padding: 12px;
+	border: 2px solid #496048;
+	border-radius: 5px;
+	box-sizing: border-box;
+	margin-top: 6px;
+	margin-bottom: 16px;
+}
+
+.paragraph input[type=submit]{
+	background-color: #496048;
+	color: white;
+	padding: 12px 20px;
+	border:none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.paragraph input[type=submit]:hover{
+	background-color:#598757 ;
+}
+
+.box{
+	display: flex;
+	border-radius: 6px;
+	padding: 30px;
+	width: auto;
+	background-color:#F4F6EC;
+}
+
+.fixed{
+	width: 300px;
+}
+
+.flex.item{
+	flex-grow: 1;
+}
+
+.google_map{
+	width: 50%;
+	padding-top: 50px; 
+	padding-left: 500px;
+	margin-left:2%;
+	float: right;
+	margin-bottom: 5%;
+	border: 5px;
+	border-radius: 10px;
+}
+
+.paragraph ul {
+  list-style-type: square;
+  font-size: 20px;
+  font-family: arial;
+  color: grey;
+  font-weight: normal;
+}
+
+.paragraph h3, h1
+{
+	font-weight:normal;
+	
+}	
+	
+

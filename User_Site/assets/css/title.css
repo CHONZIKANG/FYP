@@ -1,0 +1,50 @@
+table {
+font-family : Arial, Helvetica, sans-serif;
+font-size : 100%;
+font-weight: bold;
+background-color: white
+}
+ h1{
+color: #ea503f;
+font-family: Arial;
+text-align: center
+}
+.register
+{
+background-color:white;
+border-style:none;
+border-radius:5px;
+border:1px solid yellow;
+width:900px;
+margin:auto;
+box-shadow:0 10px 50px 0 rgb(0 0 0 / 30%);
+margin:auto;
+max-width:500px;
+}
+
+
+
+.register-form h3 {
+text-align:left;
+margin-left:40px;
+color:#fff;
+}
+.register-form {
+box-sizing:border-box;
+padding-top:15px;
+padding-bottom:10%;
+margin:5% auto;
+text-align:center;
+}
+.register input[type="text"],
+.register input[type="Password"] {
+max-width:400px;
+width: 80%;
+line-height:3em;
+font-family: Arial;
+margin:1em 2em;
+border-radius:3px;
+border:2px solid green;
+outline:none;
+padding-left:10px;
+}

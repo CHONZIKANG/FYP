@@ -1,0 +1,89 @@
+*{font-family:'Lato', sans-serif;}
+
+a:link, a:visited
+{
+	color:black;
+	text-decoration:none;
+
+}
+
+#info
+{
+	width:1200px;
+	overflow:auto;
+	background-color:#ffffff;
+	margin: auto;
+	padding: 0px 30px;
+	
+
+	
+}
+
+#left
+{
+	float:left;
+	width:200px;
+	padding:5px;
+
+}
+
+#right
+{
+	float:left;
+	padding:10px;	
+	border-left:0.0625rem solid #efefef;
+
+
+}
+
+
+#title
+{
+    border-bottom: 0.0625rem solid #efefef;
+
+}
+
+.container #Order_details_btn
+{
+	padding: 10px 50px;
+	text-align:center;
+	font-size: 18px;
+	color: #ffffff;
+	background-color: #102B4E;	
+	border: 1px solid #102b4e;
+}
+
+.container #Cancel_order_btn
+{
+	padding: 10px 50px;
+	text-align:center;
+	font-size: 18px;
+	border: 0.5px solid grey;
+	color: black;
+	
+}
+
+
+a#sub
+{
+	font-size:14px;
+
+}
+
+.container
+{
+	border-bottom : 0.5px solid grey;
+
+
+	
+	
+
+}
+
+#section
+{
+	display: flex;
+	justify-content: center;
+
+
+}

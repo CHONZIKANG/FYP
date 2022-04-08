@@ -1,0 +1,90 @@
+.feedback-header {
+  text-align:center;
+  font-size:250%;
+}
+
+.feedback-form {
+  border:.5px solid #fff;
+  border-radius:10px;
+  box-shadow:0px 0px 10px #000;
+  width:800px;
+  height:520px;
+  text-align:center;
+  margin:0 auto;
+}
+
+.feedback-title {
+  text-align: left;
+}
+
+span.scale-rating{
+  margin: 5px 0 15px;
+  display: inline-block;
+  width: 100%;  
+}
+
+span.scale-rating label {
+  position:relative;
+  height:33px;
+  margin: 0 5px 0 0;
+  width: calc(10% - 7px);
+  float: left;
+  cursor:pointer;
+}
+
+span.scale-rating>label {
+  border: 1px solid grey;
+  height:33px;
+  margin: 0 5px 0 0;
+  width: calc(10% - 7px);
+  float: left;
+  cursor:pointer;
+}
+
+span.scale-rating input[type=radio] {
+  position:absolute;
+    -webkit-appearance: none;
+  opacity:0;
+  outline:0 !important;
+    height:33px;
+ 
+    margin: 0 5px 0 0;
+  
+  width: 100%;
+    float: left;
+  cursor:pointer;
+  z-index:3;
+}
+
+span.scale-rating label input[type=radio]:checked ~ label{
+    -webkit-appearance: none;
+
+    margin: 0;
+  background:#fddf8d;
+}
+span.scale-rating label:before
+{
+  content:attr(value);
+    top: 7px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    vertical-align: middle;
+  z-index:2;
+}
+
+
+
+.feedback-form input[type="button"] {
+  height:30px;
+  width:100px;
+  background:black;
+  border:1px solid #f2f2f2;
+  border-radius:20px;
+  color: slategrey;
+  text-transform:uppercase;
+  font-family: 'Ubuntu', sans-serif;
+  cursor:pointer;
+}

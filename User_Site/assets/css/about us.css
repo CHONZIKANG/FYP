@@ -1,0 +1,48 @@
+body {background-color: #fff;}
+h1, h2, h3, h4, h5, h6, a {
+  margin:0; padding:0;
+}
+.about {
+  margin:0 auto;
+  max-width:500px;
+}
+.about-header {
+  text-align:center;
+  font-size:300%;
+}
+
+.about-phone {
+  border:.5px solid #fff;
+  background:#4facff;
+  background-color:#CCCCFF;
+  border-radius:10px;
+  box-shadow:0px 0px 10px #000;
+  width:500px;
+  height:120px;
+  text-align:center;
+}
+
+.about-email {
+  border:.5px solid #fff;
+  background:#4facff;
+  background-color:#9FE2BF;
+  border-radius:10px;
+  box-shadow:0px 0px 10px #000;
+  width:500px;
+  height:120px;
+  text-align:center;
+}
+
+.about-address {
+  border:.5px solid #fff;
+  background:#4facff;
+  background-color:#40E0D0;
+  border-radius:10px;
+  box-shadow:0px 0px 10px #000;
+  width:500px;
+  height:120px;
+  text-align:center;
+}
+
+
+

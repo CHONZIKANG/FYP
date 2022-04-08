@@ -1,0 +1,95 @@
+body 
+{
+	background-color:#fbf9f1;
+	font-family: 'Roboto', sans-serif;
+
+}
+
+#title
+{
+	font-family: 'Birthstone', cursive;
+    color: #102b4e;
+    font-size: 4.25em;
+	background-color:#fbf9f1;
+	border-bottom: 1px solid #102b4e;
+	margin:0px;
+	box-shadow:0 4px 2px -2px rgb(0 0 0 / 10%);
+}
+.login
+{
+	background-color:white;
+	border-style:none;
+	border-radius:25px;
+	width:900px;
+	margin:auto;
+	box-shadow:0 10px 10px 0 rgb(0 0 0 / 10%);
+}
+
+.login {
+  margin:0 auto;
+  max-width:500px;
+}
+
+.login-header h1{
+  color: #102b4e;
+  text-align:center;
+  font-size:54px;
+
+}
+
+
+.login-form {
+  border:.5px solid #fff;
+  background:white;
+  border-radius:10px;
+}
+.login-form h3 {
+  text-align:left;
+  margin-left:40px;
+  color:#fff;
+}
+.login-form {
+  box-sizing:border-box;
+  padding-top:15px;
+	padding-bottom:10%;
+  margin:auto;
+  text-align:center;
+}
+.login input[type="text"],
+.login input[type="password"] {
+  max-width:400px;
+	width: 80%;
+  line-height:3em;
+  font-family: 'Roboto', sans-serif;
+  margin:1em 2em;
+  border-radius:5px;
+  border:2px solid #f2f2f2;
+  outline:none;
+  padding-left:10px;
+}
+.login-form input[type="submit"] {
+  height:30px;
+  width:100px;
+  background:#fff;
+  border:1px solid #f2f2f2;
+  border-radius:20px;
+  color: slategrey;
+  text-transform:uppercase;
+  font-family: 'Roboto', sans-serif;
+  cursor:pointer;
+}
+.sign-up{
+  color:black;
+  margin-left:-70%;
+  cursor:pointer;
+  text-decoration:underline;
+}
+.no-access {
+  color:#E86850;
+  font-size:14px;
+  margin:20px 0px 20px -48%;
+  text-decoration:underline;
+  cursor:pointer;
+}
+
+
