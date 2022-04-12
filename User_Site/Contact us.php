@@ -9,7 +9,7 @@ $error="";
 	
 	if(isset($_POST["send"]))
 	{
-		if(isset($_SESSION['id']))
+		if(isset($_SESSION['userid']))
 		{
 			$username = $_POST["username"];
 			$email = $_POST["email"];
