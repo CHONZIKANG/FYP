@@ -2,6 +2,15 @@
 ob_start();
 include("dataconnection.php");
 
+/*
+if(!isset($_SESSION['adminid']))
+	{
+		header("Location:admin login.php");
+	}
+	
+$admin_ID=$_SESSION['adminid'];
+*/
+
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -36,6 +45,7 @@ include("dataconnection.php");
 	if(isset($_GET['update']))
 	{
 		$id=$_GET['id'];
+		echo $id;
 		
 		$category=mysqli_query($connect,"SELECT * FROM category WHERE category_id='$id'");
 		
@@ -179,6 +189,9 @@ body {
 				}
 				else
 				{
+
+					mysqli_query($connect,"UPDATE product SET product_category_id='0' WHERE product_category_id='$id'");
+					
 					$product=$_POST['add_product'];
 					
 					for($i=0; $i<count($product);$i++)
