@@ -1,0 +1,55 @@
+*{font-family:'Lato', sans-serif;}
+
+
+#add_form
+{
+	
+	border-style:none;
+	background-color:#ffffff;
+	box-shadow: 0 10px 10px 0 rgb(0 0 0 / 10%);
+	width:470px;
+	margin:64px auto;
+	padding: 27px 50px 32px;
+}
+
+#add_form input[type="email"],
+#add_form input[type="password"],
+#add_form input[type="text"],
+#add_form input[type="date"],
+#add_form input[type="tel"]
+{
+	width: 60%;
+	height: 10px;
+	border: 1px black solid;
+	border-radius:2px;
+	font-size: 16px;
+	padding: 10px;
+	margin: 10px;
+	
+}
+
+#add_form select
+{
+	width: 60%;
+	border: 1px black solid;
+	border-radius:2px;
+	font-size: 16px;
+	margin: 10px;
+	
+}
+
+#asterisk
+{
+	color:red;
+
+}
+
+#add_form #save_btn
+{
+	padding: 10px 50px;
+	text-align:center;
+	font-size: 18px;
+	margin:auto;
+	color: #ffffff;
+	background-color: #102B4E;	
+}

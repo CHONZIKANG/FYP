@@ -1,6 +1,13 @@
 <?php
 include("dataconnection.php");
 
+if(!isset($_SESSION['adminid']))
+	{
+		header("Location:admin login.php");
+	}
+	
+$admin_ID=$_SESSION['adminid'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

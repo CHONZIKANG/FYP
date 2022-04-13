@@ -1,6 +1,15 @@
 <?php 
-ob_start();
 include("dataconnection.php");
+ob_start();
+
+/*
+if(!isset($_SESSION['adminid']))
+	{
+		header("Location:admin login.php");
+	}
+	
+$admin_ID=$_SESSION['adminid'];
+*/
 
 ?>
 <!DOCTYPE html>
@@ -15,7 +24,7 @@ body {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Members</title>
+    <title>Manage Category</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 	
@@ -45,15 +54,25 @@ $count=mysqli_num_rows($category_list);
 <?php
 if(isset($_POST['delete']))
 {
-	$checkbox=$_POST['category'];
+
 	
-	for($i=0; $i<count($checkbox);$i++)
+	if(empty($_POST['category']))
 	{
-		$del_id = $checkbox[$i];
-		mysqli_query($connect,"DELETE FROM category WHERE category_id='$del_id'");
+		?>
+		<script> alert("No category is selected");</script>
+		<?php
 	}
-	
-	header( "refresh:0; url=Manage_Category.php" );
+	else
+	{
+		$checkbox=$_POST['category'];
+		for($i=0; $i<count($checkbox);$i++)
+		{
+			$del_id = $checkbox[$i];
+			mysqli_query($connect,"DELETE FROM category WHERE category_id='$del_id'");
+		}
+		
+		header( "refresh:0; url=Manage_Category.php" );
+	}
 }
 
 ?>
@@ -214,7 +233,7 @@ if(isset($_POST['delete']))
             <footer class="row tm-mt-small">
                 <div class="col-12 font-weight-light">
                     <p class="d-inline-block tm-bg-black text-white py-2 px-4">
-                        Members Page
+                        Manage Category Page
                     </p>
                 </div>
             </footer>
