@@ -40,7 +40,14 @@ session_start();
 
 	
 <?php
-$u_id=$_SESSION['userid'];
+
+if(!isset($_SESSION['userid']))
+	{
+		header("Location:Login.php");
+	}
+	
+	$u_id=$_SESSION['userid'];
+	
 if(isset($_GET['details']))
 {
 	
