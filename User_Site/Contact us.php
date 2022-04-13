@@ -128,8 +128,7 @@ $error="";
               <a class="nav-link" href="Main_Page.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="products.php">Products
-                <span class="sr-only">(current)</span>
+              <a class="nav-link" href="Product list.php">Products
               </a>
             </li>
             <li class="nav-item">

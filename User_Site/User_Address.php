@@ -35,6 +35,7 @@
 	<?php
 
 	include("dataconnection.php");
+	ob_start();
 
 	session_start();
 	
@@ -86,16 +87,14 @@
               <a class="nav-link" href="Main_Page.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="products.php">Products
-                <span class="sr-only">(current)</span>
+               <a class="nav-link" href="Product list.php">Products
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="About us.php">About Us</a>
             </li>
-            <li class="nav-item active">
+             <li class="nav-item">
               <a class="nav-link" href="Contact us.php">Contact Us</a>
-              <span class="sr-only">(current)</span>
             </li>
 			<?php
 			if(isset($_SESSION['userid']))
@@ -288,7 +287,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="copyright-text">
-              <p>Copyright &copy; 2021 RAPID GROCERY STORE(MLK) SDN.BHD. 
+               <p>Copyright &copy; 2022 Electronic Gadgets Online (MLK) SDN.BHD. 
                 
           
             </div>

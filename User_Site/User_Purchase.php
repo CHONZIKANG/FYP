@@ -33,6 +33,7 @@
 	<link rel="stylesheet" href="assets/css/User_Purchase_css.css">
 	
 <?php
+include("dataconnection.php");
 session_start();
 
 	if(!isset($_SESSION['userid']))
@@ -42,7 +43,7 @@ session_start();
 
 $u_id=$_SESSION['userid'];
 
-$purchase=mysqli_query($connect,"SELECT * FROM purchase WHERE user_id='$u_id' AND purchase_is_cancelled=0;");
+$purchase=mysqli_query($connect,"SELECT * FROM order_list WHERE customer_id='$u_id';");
 
 $count=mysqli_num_rows($purchase);
 
@@ -74,20 +75,18 @@ $count=mysqli_num_rows($purchase);
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
+           <li class="nav-item">
               <a class="nav-link" href="Main_Page.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="products.php">Products
-                <span class="sr-only">(current)</span>
+               <a class="nav-link" href="Product list.php">Products
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="About us.php">About Us</a>
             </li>
-            <li class="nav-item active">
+             <li class="nav-item">
               <a class="nav-link" href="Contact us.php">Contact Us</a>
-              <span class="sr-only">(current)</span>
             </li>
 			<?php
 			if(isset($_SESSION['userid']))
@@ -188,13 +187,13 @@ $count=mysqli_num_rows($purchase);
 	<?php
 		while($row=mysqli_fetch_assoc($purchase))
 		{
-			$prod_id=$row['product_id'];
+			//$prod_id=$row['product_id'];
 			
-			$product=mysqli_query($connect,"SELECT * FROM product WHERE product_id='$prod_id'");
+			//$product=mysqli_query($connect,"SELECT * FROM product WHERE product_id='$prod_id'");
 			
-			while($line=mysqli_fetch_assoc($product))
-			{
-				$product_picture="image/".$line['product_pic'];
+			//while($line=mysqli_fetch_assoc($product))
+			//{
+				$product_picture="assets/images/".$row['order_image'];
 
 
 	?>
@@ -211,14 +210,14 @@ $count=mysqli_num_rows($purchase);
 				
 				<div style="padding: 0px 20px; width: 360px; overflow: hidden; box-sizing:border-box; overflow-wrap: break-word;">
 					<p>
-						<span id="title"><p><?php echo $line['product_name']; ?></p>
-						<span id="qty" style="font-size:14px; color:grey; "><p>x <?php echo $row['purchase_count'];?> </p></span>
+						<span id="title"><p><?php echo $row['order_product_name']; ?></p>
+						<span id="qty" style="font-size:14px; color:grey; "><p>x <?php echo $row['order_quantity'];?> </p></span>
 					</p>
 				</div>
 				
 				<div style="padding: 0px 20px; width:100px; overflow-wrap: break-word;">	
 					<p>
-						<span><p>RM <?php echo $line['product_price']; ?></p></span>
+						<span><p>RM <?php echo $row['order_unit_price']; ?></p></span>
 					
 					</p>
 				</div>
@@ -226,14 +225,14 @@ $count=mysqli_num_rows($purchase);
 				
 				<div style="padding: 0px 20px; width:110px; overflow-wrap: break-word; overflow-wrap: break-word;">
 					<p>
-						<span><p>RM <?php echo $row['purchase_grand_total']; ?></p> </span>
+						<span><p>RM <?php echo $row['order_Total']; ?></p> </span>
 					
 					</p>
 				</div>
 				
 				<div style="padding: 0px 20px; overflow:visible; width:115px; overflow-wrap: break-word;">
 					<p>
-						<span><p><?php echo $row['status']; ?></p> </span>
+						<span><p><?php echo $row['order_Status']; ?></p> </span>
 					
 					</p>
 				</div>
@@ -242,8 +241,7 @@ $count=mysqli_num_rows($purchase);
 			
 			
 			<div id="bottom" style="margin: 25px 5px 25px 530px;">
-				<a href="order_details.php?details&id=<?php echo $row['purchase_id'];?>" id="Order_details_btn">Order Details</a>
-				<a href="#" id="Cancel_order_btn">Cancel Order</a>
+				<a href="order_details.php?details&id=<?php echo $row['order_id'];?>" id="Order_details_btn">Order Details</a>
 			</div>
 			
 
@@ -255,7 +253,7 @@ $count=mysqli_num_rows($purchase);
 	</div>
 
 	<?php
-		}
+		//}
 		}
 		}
 
@@ -354,7 +352,7 @@ $count=mysqli_num_rows($purchase);
         <div class="row">
           <div class="col-md-12">
             <div class="copyright-text">
-              <p>Copyright &copy; 2021 RAPID GROCERY STORE(MLK) SDN.BHD. 
+              <p>Copyright &copy; 2022 Electronic Gadgets Online (MLK) SDN.BHD. 
                 
           
             </div>

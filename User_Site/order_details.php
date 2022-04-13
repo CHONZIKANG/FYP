@@ -1,3 +1,8 @@
+<?php  
+include("dataconnection.php");  
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,86 +35,33 @@
 	
 	<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 
-	<link rel="stylesheet" href="assets/css/Change_Password_Css.css">
-	
-	<?php   
 
-	include("dataconnection.php");
-
-	session_start();
-	
-	$error="";
-	
-	if(!isset($_SESSION['userid']))
-	{
-		header("Location:Login.php");
-	}
-
-	$user_id=$_SESSION['userid'];
-
-	$password_result=mysqli_query($connect,"SELECT user_password FROM account WHERE user_id='$user_id'");
-
-	$row=mysqli_fetch_assoc($password_result);
-
-	$valid=1;
-	$new_pass_valid=1;
-
+<link rel="stylesheet" href="assets/css/Order_Details_css.css">
 
 	
+<?php
+$u_id=$_SESSION['userid'];
+if(isset($_GET['details']))
+{
 	
+	$purchase_id=$_GET['id'];
 	
-	if(isset($_POST['save']))
-	{
-		
-		$current_pass=$_POST["useracc_pass"];
-		$new_pass=$_POST["new_password"];
-		$confirm_pass=$_POST["confirm_password"];
+	//echo $purchase_id;
+	
+	$result=mysqli_query($connect,"SELECT * FROM order_list WHERE order_id='$purchase_id'");
+	
+	$row=mysqli_fetch_assoc($result);
+	
+	//$address_id=$row['address_id'];
+	
+	//$address=mysqli_query($connect,"SELECT * FROM address WHERE address_id='$address_id'");
+	
+	//$address_row=mysqli_fetch_assoc($address);
+	
+}
 
-		$user_password=$row['user_password'];
-		
-		if($current_pass!=$user_password)
-		{
-			$valid=0;
-			$error="Password not same.";
-			
 
-
-		}
-		else if($current_pass==$user_password)
-		{
-			$valid=1;
-		}
-		
-
-		
-		
-		if($new_pass!=$confirm_pass)
-		{
-			$new_pass_valid=0;
-			$error="Please make sure re-type password is match.";
-		}
-		else if($new_pass==$confirm_pass)
-		{
-			$new_pass_valid=1;
-		}
-		
-		if(empty($current_pass)||empty($new_pass)||empty($confirm_pass))
-		{
-			$error="Please fill up every field.";
-			$valid=0;
-		}
-		
-		if($valid==1 && $new_pass_valid==1)
-		{
-			mysqli_query($connect,"UPDATE account SET user_password='$confirm_pass' WHERE user_id='$user_id'");
-			header("refresh:0; url:Change_Password.php");
-		}
-			
-			
-
-	}
-
-	?>
+?>
 
   </head>
 
@@ -120,14 +72,14 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-          <span>Official Website Electronic Gadget Online</span>
+          <span>Official Website Electronic Gadget Store</span>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
       <div class="container">
        <a class="navbar-brand" href="#"><p style="font-family: 'Birthstone', cursive; color:#0000cd; font-size:3.25em;">Electronic Gadgets Online</p></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -135,7 +87,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
+           <li class="nav-item">
               <a class="nav-link" href="Main_Page.php">Home</a>
             </li>
             <li class="nav-item">
@@ -153,21 +105,22 @@
 			{
 			?>
 			<li class="nav-item">
-			  <a href="Shopping_Cart.php" > <i class="fas fa-shopping-cart" title="Shopping Cart" ></i> </a>
+			  <a href="Shopping Cart.html" > <i class="fas fa-shopping-cart" title="Shopping Cart" ></i> </a>
 			  </li>
-			<li class="nav-item">
+			  
+			  <li class="nav-item">
 			  <div class="dropdown">
 			  <button class="dropbtn">
 			  <a href="#.html" > <i class="far fa-user" title="User Account"></i> </a>
 			  </button>
 			  <div class="dropdown-content">
-			  <a class="nav-link" href="User_Profile.php">My Account</a> 
-              <a class="nav-link" href="Logout.php">Logout</a>
+			   <a class="nav-link" href="user edit.html">My Account</a> 
+              <a class="nav-link" href="login_form.html">Logout</a>
 				</div>
 			  
 			  </div>
 			  </li>
-			<?php
+			  <?php
 			}
 			?>
           </ul>
@@ -178,89 +131,128 @@
     <!-- Page Content -->
     <!-- About Page Starts Here -->
     <div class="contact-page">
-		<div class="change_pass"style="background-color:#f4f4f4; padding:25px 0px;">
+      <div style="background-color:#f4f4f4;">
 
-		<div id="info">
-		<div id="left">
-			<p>Manage My Account</p>
-			<br>
-			<a href="User_Profile.php">My Profile</a>
-			<br>
-			<br>
-			<a href="User_Address.php" id="sub">&emsp;Addresses</a>
-			<br>
-			<br>
-			<a href="Change_Password.php" id="sub">&emsp;Change Password</a>
-			<br>
-			<br>
-			<a href="User_Purchase.php">My Purchase</a>
+<div id="info">
+<div id="left">
+<p>Manage My Account</p>
+<br>
+<a href="User_Profile.php">My Profile</a>
+<br>
+<br>
+<a href="User_Addresses.php" id="sub">&emsp;Addresses</a>
+<br>
+<br>
+<a href="Change_Password.php" id="sub">&emsp;Change Password</a>
+<br>
+<br>
+<a href="User_Purchase.php">My Purchase</a>
 
+</div>
+
+<div id="right">
+	<div id="title">
+	<h3>Order Details </h3>
+	</div>
+	
+	
+	<div style="border-bottom: 1px solid rgba(0,0,0,.09);; padding: 20px;">
+	
+		<h3>Order ID </h3>
+		<p style="color:grey; font-size:14px;"><?php echo $row['order_id'];?></p>
+		<h3>Delivery Address </h3>
+		
+
+		<p id="receipient_address"><?php echo $row['order_Customer'];?> </p>
+		
+		</br>
+
+		<h3>Tracking Number</h3>
+		<p id="tracking_no"> <?php echo $row['order_tracking'];?></p>
+		
+		<div id="delivery_details">
+		<ul>
+			<li><?php echo $row['order_Status'];?></li>
+		
+		</ul>
+		</div>
+		
+		
+		
+	
+	</div>
+	<?php
+	
+	//$prod_id=$row['product_id'];
+	
+	//$product=mysqli_query($connect,"SELECT * FROM product WHERE product_id='$prod_id'");
+	
+	//$prod_row=mysqli_fetch_assoc($product);
+	
+	$product_picture="assets/images/".$row['order_image'];
+	
+	?>
+	
+	<div>
+			<div style="display: flex;">
+			<div style="padding: 0px 20px;">
+				<p>
+					<img src="<?php echo $product_picture; ?>" width="80px" height="80px";>
+				</p>
 			</div>
-
-		<div id="right">
-		<div id="title">
-		<h3>Change Password</h3>
-		</div>
-
-		<form name="edit_password" id="form" method="POST">
-
-		<span id="error" style="color:red; font-size:14px;"><?php echo $error;?></span>
-		<p>
-		Current Password 
-		<br>
-		<input type="password" name="useracc_pass" id="acc_password"  size="50" >
-		<br>
-		<?php if(isset($_GET['save']))
-				{
-					if(empty($current_pass)){  ?><span id="alert_msg"><?php  echo "Please fill up your current password! "?> </span><?php }
-					else if($valid==0){?><span id="alert_msg"><?php  echo "Password is incorrect!"?> </span>
-								<?php }
-				}?>
-		</p>
-
-		<p>
-		New Password
-		<br>
-		<input type="password" id="new_password" name="new_password" size="50 "pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" >
-		<br>
-		<span style="color: grey; font-size:14px;">
-		*Password must contain 8 or more characters, one number, one uppercase and lowercase letter. 
-		</span>
-		<br>
-		<?php if(isset($_GET['save']))
-				{
-					if(empty($new_pass)){  ?><span id="alert_msg"><?php  echo "Please fill up your new password! "?> </span><?php }}?> 
-
-		</p>
-
-
-		<p>
-		Confirm Password
-		<br>
-		<input type="password" id="confirm_password" name="confirm_password" size="50" >
-		<br>
-		<?php if(isset($_GET['save']))
-				{
-					if(empty($confirm_pass)){  ?><span id="alert_msg"><?php  echo "Please recomfirm your new password! "?> </span><?php }?> 
-					<?php if($new_pass_valid==0){?><span id="alert_msg"><?php  echo "Password entered is different!"?> </span>
-								<?php }
-				}?>
+			
+			<div style="padding: 10px 20px; width: 350px; height: 62px; overflow: hidden;">
+				<p>
+					<span id="title"><p><?php echo $row['order_product_name'] ?></p>
+				</p>
+			</div>
+			
+			</div>
+			
+			<div style="padding: 0px 20px;">	
+				<p>
+					<span><p>RM <?php echo $row['order_unit_price'] ?></p></span>
 				
-		<br>
+				</p>
+			</div>
+			
+			<div style="padding: 0px 20px;">	
+				<p>
+					<span><p>Quantity: x<?php echo $row['order_quantity'];?></p></span>
+				
+				</p>
+			</div>
+			
+			<div style="display: flex; padding: 10px; justify-content: flex-end; border-bottom: 1px solid rgba(0,0,0,.09);;">
+					<div>
+						<p>Total: </p>
+					</div>
+					
+					<div style="padding: 0px 50px; width: 90px;">
+						<p>RM <?php echo $row['order_Total'];?> </p>
+					</div>
+			</div>
+			
+			
+			
+			
+			
+			
 
-		</p>
-
-		<br>
-		<input type="submit" name="save" id="save_btn" value="Save">
-
-		</div>
 
 
-		</form>
+			
+			</div>
+	
+	
+	</div>
+	
+	
 
 
-		</div>
-		</div>
+</div>
+</div>
+</div>
     </div>
     <!-- About Page Ends Here -->
 
@@ -344,7 +336,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="copyright-text">
-               <p>Copyright &copy; 2022 Electronic Gadgets Online (MLK) SDN.BHD. 
+              <p>Copyright &copy; 2022 Electronic Gadgets Online (MLK) SDN.BHD. 
                 
           
             </div>
