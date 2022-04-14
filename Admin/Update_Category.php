@@ -2,14 +2,14 @@
 ob_start();
 include("dataconnection.php");
 
-/*
+
 if(!isset($_SESSION['adminid']))
 	{
 		header("Location:admin login.php");
 	}
 	
 $admin_ID=$_SESSION['adminid'];
-*/
+
 
 ?><!DOCTYPE html>
 <html lang="en">
@@ -81,7 +81,7 @@ body {
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mx-auto">
                                 <li class="nav-item">
                                     <a class="nav-link" href="index.html">Dashboard
@@ -94,10 +94,9 @@ body {
                                         Account
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="Member.html">Member's Account</a>
-										<a class="dropdown-item" href="Staff.html">Staff's Account</a>
-										<a class="dropdown-item" href="accounts.html">Update Staff's Account</a>
-										<a class="dropdown-item" href="accounts.html">Update Member's Account</a>
+                                        <a class="dropdown-item" href="Manage_Members.php">Member's Account</a>
+										<a class="dropdown-item" href="staff.php">Staff's Account</a>
+										<a class="dropdown-item" href="profile.php">Update Staff's Account</a>
 
                                     </div>
                                 </li>
@@ -107,27 +106,27 @@ body {
                                         Product/Category
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-										<a class="dropdown-item" href="Manage_Product.html">View Product</a>
-                                        <a class="dropdown-item" href="Add_Product.html">Add Product</a>
-										<a class="dropdown-item" href="Update_Product.html">Update Product</a>
-										<a class="dropdown-item" href="Manage_Category.html">Category</a>
+										<a class="dropdown-item" href="Manage Product list.php">View Product</a>
+                                        <a class="dropdown-item" href="Add_Product.php">Add Product</a>
+										<a class="dropdown-item" href="Update Product.php">Update Product</a>
+										<a class="dropdown-item" href="Manage_Category.php">Category</a>
 										
 
                                     </div>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="Manage_Order.html">Order</a>
+                                    <a class="nav-link" href="Manage Order list.php">Order</a>
                                 </li>
 								
 								<li class="nav-item">
-                                    <a class="nav-link" href="Sales_Report.html">Sales Report</a>
+                                    <a class="nav-link" href="Sales Report.php">Sales Report</a>
                                 </li>
 								
                             </ul>
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link d-flex" href="login.html">
+                                    <a class="nav-link d-flex" href="Logout.php">
                                         <i class="far fa-user mr-2 tm-logout-icon"></i>
                                         <span>Logout</span>
                                 </a>
