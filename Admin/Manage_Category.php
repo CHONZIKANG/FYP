@@ -60,6 +60,7 @@ if(isset($_POST['delete']))
 	{
 		?>
 		<script> alert("No category is selected");</script>
+		
 		<?php
 	}
 	else
@@ -157,15 +158,22 @@ if(isset($_POST['delete']))
 <div id="container1">
 	
 	<h3>Category </h3>
-	<div id="row">
-	
 	<?php  
 	if($count<1)
 	{
-		echo "No category";
+		?>
+		<p> No Category </p>
+
+		<div style="padding:10px; display: flex; justify-content: center;">
+		<input type="submit" id="add_category" style="background-color:#102b4e; border:none; color:white;" name="add" value="ADD"> 
+		</div>
+		<?php
 	}
 	else
-	{
+	{?>
+	<div id="row">
+	
+	<?php
 	while($row=mysqli_fetch_assoc($category_list))
 	{
 		$cat_id=$row['category_id'];
