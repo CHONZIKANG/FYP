@@ -89,7 +89,7 @@ body {
     <div class="login">
       <div class="login-header">
 	  <br>
-    <h2 id="header" style="color:#DAE4FB; ">Electronic Gadget Store Admin Login</h2>
+    <h2 id="header" style="color:#DAE4FB; background-color: rgba(0, 0, 0, 0.5);">Electronic Gadget Store Admin Login</h2>
   </div>
     <div class="login-form">
 	<form id="Login-form" method="post">	  
