@@ -1,7 +1,7 @@
 <?php
 ob_start();
 include("dataconnection.php");
-
+session_start(); 
 
 if(!isset($_SESSION['adminid']))
 	{
