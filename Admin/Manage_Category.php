@@ -2,7 +2,7 @@
 include("dataconnection.php");
 ob_start();
 
-
+session_start(); 
 if(!isset($_SESSION['adminid']))
 	{
 		header("Location:admin login.php");
