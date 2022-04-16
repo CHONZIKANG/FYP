@@ -123,7 +123,7 @@ $admin_ID=$_SESSION['adminid'];
 	
 ?>
 
-<link rel="stylesheet" href="Add_product1.css">
+<link rel="stylesheet" href="css/Add_product1.css">
 
 <div class="add">
   <div class="add-header">

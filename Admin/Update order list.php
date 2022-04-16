@@ -74,7 +74,7 @@ mysqli_close($connect);
 	
 	<link rel="stylesheet" href="css/Update.css">
 	
-	<link rel="stylesheet" href="view_product_list1.css">
+	<link rel="stylesheet" href="css/view_product_list1.css">
 	
 
 <style>
