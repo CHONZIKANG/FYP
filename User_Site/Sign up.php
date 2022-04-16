@@ -6,7 +6,6 @@ include("dataconnection.php");
 	$success=0;
 if(isset($_GET["submitbtn"]))
 {
-	$User_ID=$_GET["User_ID"];
 	$Uname=$_GET["username"];
 	$Password=$_GET["password"];
 	$Pnumber=$_GET["phone_number"];
@@ -84,7 +83,7 @@ if(isset($_GET["submitbtn"]))
 		</script>
 		
 		<?php
-		header( "refresh:0; url=Regirstration or sign up.php" );
+		header( "refresh:0; url=Login.php" );
 		
 		}
 }
@@ -95,8 +94,8 @@ if(isset($_GET["submitbtn"]))
 
 <title>Electronic Gadget Store </title>
 
-<link rel="stylesheet" href="assets/css/register form.css">
-<link rel="stylesheet" href="title.css">
+
+<link rel="stylesheet" href="assets/css/Sign up1.css">
 <link href="https://fonts.googleapis.com/css2?family=Aguafina+Script&family=Alex+Brush&family=Architects+Daughter&family=Birthstone&family=Birthstone+Bounce&family=Roboto&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 
@@ -109,54 +108,80 @@ function myFunction()
 </head>
 <body>
 
+<title> Sign Up</title>
 
-<p id="title">Electronic Gadget Store <span style="font-family: 'Ubuntu', sans-serif; font-size:24px;">Register</span></p>
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 
-<head>
-<h1> Sign Up</h1>
+
+
 </head>
-<body>
-<form name="user_form" method="GET" action="" >
-<div class="register">
-  <div class="register-form">
-    <h3 style="color:black;">User ID</h3>
-    <input type="text" name="User_ID" placeholder="User_ID" required ><br>
-	<br>
-    <h3 style="color:black;">Username:</h3>
-    <input type="text" name="username" placeholder="Username" required ><br>
+<body style="background-color:#f4f4f4;">
 
-	<br>
-    <h3 style="color:black;">Password:</h3>
-    <input type="password" name="password" placeholder="Password" required>
+<div class="signin">
+<form name="signin_frm" method="GET" id="form">
+<h1 style="text-align : center;"> Sign UP</h1>
 
-	<br>
-	<h3 style="color:black;">Phone Number:</h3>
-    <input type="text" name="phone_number" placeholder="Phone Number" required>
-    
-	<br>
-	<h3 style="color:black;">Email:</h3>
-    <input type="Email" name="email" placeholder="Enter email" required><br>
+<p>
+Username:<span style="color:red;">*</span>
+<br>
+<br>
+<input type="text" name="username"  size="50" required>
+<br>
 
-    <br>
-	<h3 style="color:black;">Birthday:</h3>
-    <input type="date" name="D_O_Birth" placeholder="Enter yr date" required >
+<p>
+Password <span style="color:red;">*</span>
+<br>
+<br>
+<input type="password" name="password" size="50" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="At least 8 character, 1 Upper case, 1 Lower case"  required>
+<br>
+<p>
+Phone Number: <span style="color:red;">*</span>
+<br>
+<br>
+<input type="text" name="phone_number"  placeholder="Phone Number" pattern="[0]{1}[1]{1}[0-9]{1}-[0-9]{3}[0-9]{4}" title="Enter 01X-XXX-XXXX"  size="50" required>
+<br>
+<p>
+Email <span style="color:red;">*</span>
+<br>
+<br>
+<input type="Email" name="email" placeholder="Enter email" required>
+<br>
+<p>
+Birthday <span style="color:red;">*</span>
+<br>
+<br>
+<input type="date" name="D_O_Birth" placeholder="Enter yr date" required>
+<br>
 
-	<br>
-	<br>
-	<label>   
-	<h3 style="color:black;">Gender :</h3>  
-	<br>  
-	<input type="radio" value="Male" name="Gender"/> Male <br>  
-	<input type="radio" value="Female" name="Gender"/> Female <br>  
-	<br>	
-	<br>
-	<br>
-    <input type="submit" name= "submitbtn" value="Register">
-    <br>
-	<a href="Login.php">Back</a>
- 
-  </div>
+</p>
+Gender <span style="color:red;">*</span>
+<br>
+<br>
+<input type="radio" value="Male" name="Gender"/> Male <br>  
+<input type="radio" value="Female" name="Gender"/> Female <br> 
+<br>
+
+</p>
+
+
+<div style="display: block; width:45%;margin:auto;">
+<input type="submit" name="submitbtn" value="Sign up" style="height:40px;" id="submit_btn" onclick="verification()">
+<br><br>
+<a href="Login.php">Back</a>
 </div>
+
+
+
+
+
 </form>
-</body> 
-</html>  
+</div>
+</body>
+
+
+
+</html>
+
+</form>
+</div>
+</body>
