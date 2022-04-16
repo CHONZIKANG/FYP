@@ -35,8 +35,7 @@
 			$error="";
 			$valid=1;			
 		}
-		
-		echo $name;
+
 		
 		if(empty($phone))
 		{
@@ -49,7 +48,6 @@
 			$valid=1;			
 		}
 		
-		echo $phone;
 		
 		if(empty($ICnumber))
 		{
@@ -74,8 +72,7 @@
 			$error="";
 			$valid=1;			
 		}
-		
-		echo $email;
+
 		
 		if(empty($password))
 		{
@@ -87,8 +84,7 @@
 			$error="";
 			$valid=1;			
 		}
-		
-		echo $password;
+
 		
 		if($valid==1)
 		{
@@ -275,13 +271,13 @@ body {
 	<br>
 	
 	<h5>Password:</h5>
-    <input type="password" name="password" placeholder="Enter your password" required/><br><br>
+    <input type="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="At least 8 character, 1 Upper case, 1 Lower case" placeholder="Enter your password" required/><br><br>
 	
 	<h5>Phone:</h5>
-    <input type="text" name="phone" placeholder="Enter your phone number" required/><br><br>
+    <input type="text" name="phone" pattern="[0]{1}[1]{1}[0-9]{1}-[0-9]{3}[0-9]{4}" title="Example: 01x-0000000" placeholder="Enter your phone number" required/><br><br>
 	
 	<h5>IC number:</h5>
-    <input type="text" name="ICnumber" placeholder="Enter your IC number" required/><br><br>
+    <input type="text" name="ICnumber" pattern="^\d{6}-\d{2}-\d{4}$" title="Example: 000000-00-0000" placeholder="Enter your IC number" required/><br><br>
 	
 	<h5>Email:</h5>
     <input type="text" name="email" placeholder="Enter your email" required/><br><br>
@@ -297,13 +293,7 @@ body {
 </div>
 </form>
 </div>
-        <footer class="row tm-mt-small">
-            <div class="col-12 font-weight-light">
-                <p class="d-inline-block tm-bg-black text-white py-2 px-4">
-                    Account Page
-                </p>
-            </div>
-        </footer>
+        
     </div>
 
     <script src="js/jquery-3.3.1.min.js"></script>
