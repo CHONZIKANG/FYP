@@ -173,6 +173,21 @@ body {
    font-weight: bold;
 }
 
+.user-edit input[type="text"],
+.user-edit input[type="password"],
+.user-edit input[type="email"] 
+{
+  max-width:400px;
+  width: 80%;
+  line-height:3em;
+  font-family: 'Ubuntu', sans-serif;
+  border-radius:5px;
+  border:2px solid #f2f2f2;
+  outline:none;
+  padding-left:10px;
+
+}
+
 </style>	
 	
 	
@@ -280,7 +295,7 @@ body {
     <input type="text" name="ICnumber" pattern="^\d{6}-\d{2}-\d{4}$" title="Example: 000000-00-0000" placeholder="Enter your IC number" required/><br><br>
 	
 	<h5>Email:</h5>
-    <input type="text" name="email" placeholder="Enter your email" required/><br><br>
+    <input type="email" name="email" placeholder="Enter your email" required/><br><br>
 
 
 <br>    
