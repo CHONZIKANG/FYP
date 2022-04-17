@@ -1,5 +1,8 @@
 <?php
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 include("dataconnection.php");
 session_start();
    $product_list=mysqli_query($connect ,"SELECT * FROM product WHERE product_isDelete=0");
