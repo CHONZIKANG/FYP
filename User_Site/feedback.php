@@ -2,6 +2,14 @@
 <?php include("dataconnection.php");?>
 <html>
 <?php
+	session_start();
+
+$u_id=$_SESSION['userid'];
+
+if(!isset($_SESSION['userid']))
+{
+	header("Location:Login.php");
+}
 	
 	$error="";
 	$valid=1;
