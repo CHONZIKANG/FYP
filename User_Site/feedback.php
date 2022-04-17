@@ -41,7 +41,7 @@
 		</script>
 		
 		<?php
-		header( "refresh:0; url=feedback.php" );
+		header( "refresh:0; url=Main_Page.php" );
 		}
 	}
 ?>
