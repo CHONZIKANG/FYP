@@ -1,7 +1,8 @@
 <?php
+echo "hi";
 include("dataconnection.php");
 session_start();
-
+   $product_list=mysqli_query($connect ,"SELECT * FROM product WHERE product_isDelete=0");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -78,7 +79,7 @@ session_start();
 	 border: 5px solid;
 	 border-color: #6bb9ff;
 	 text-align:justify;
-	 background-image: url('image/Avengers.jpg');
+	 background-image: url('image/background.jpg');
 	 font-weight: bold;
 	 box-shadow: 0 10px 10px 0 rgb(0 0 0 / 10%);
 }
@@ -256,75 +257,21 @@ function alrt()
           </div>
           <div class="col-md-12">
             <div class="owl-carousel owl-theme">
-              <a href="Cable 1.html">
+			<?php
+	
+			while($row=mysqli_fetch_assoc($product_list))
+			{
+			?>
+              <a href="Product.php?view_product&id=<?php echo $row["product_id"];?>">
                 <div class="featured-item">
-                  <img src="assets/images/Cable/100% HOCO U67 SILICONE CHARGING DATA CABLE 2.4A (1.2M).jpg" alt="">
-                  <h4>100% HOCO U67 SILICONE CHARGING DATA CABLE 2.4A (1.2M)</h4>
-                  <h6>RM40.70</h6>
+                <?php echo "<img style='width:100%; height:55%; float:left; margin-right:10px;' src='assets/images/".$row['product_image']."' >";  ?>
+                  <h4><?php echo $row["product_name"]; ?></h4>
+                  <h6>RM<?php echo $row["product_price"];?></h6>
                 </div>
               </a>
-             <a href="Cable 2.html">
-                <div class="featured-item">
-                  <img src="assets/images/Cable/100% LDNIO LIGHTNING CABLE LS26.png" alt="">
-                  <h4>100% LDNIO LIGHTNING CABLE LS26</h4>
-                  <h6>RM15.00</h6>
-                </div>
-              </a>
-               <a href="Speaker 2.html">
-                <div class="featured-item">
-                  <img src="assets/images/Speaker/SADA V-188 MINI USB SPEAKERS 3.5MM AUX WIRED LAPTOP SPEAKERS LOVELY HEART SMALL.jpeg" alt="">
-                  <h4>SADA V-188 MINI USB SPEAKERS 3.5MM AUX WIRED LAPTOP SPEAKERS LOVELY 
-				  HEART </h4>
-                  <h6>RM 16.80</h6>
-                </div>
-              </a>
-              <a href="Speaker 1.html">
-                <div class="featured-item">
-                  <img src="assets/images/Speaker/MULTIMEDIA TROLLY SPEAKER GZ-W812.jpg" alt="">
-                  <h4>MULTIMEDIA TROLLY SPEAKER GZ-W812</h4>
-                  <h6>RM 280.00</h6>
-                </div>
-              </a>
-              <a href="Power bank 2.html">
-                <div class="featured-item">
-                  <img src="assets/images/Power bank/ENTELLIGENCE POWERBANK 10000MAH.jpg" alt="">
-                  <h4>ENTELLIGENCE POWERBANK 10000MAH</h4>
-                  <h6>RM 51.10</h6>
-                </div>
-              </a>
-                <a href="Power bank 1.html">
-                <div class="featured-item">
-                  <img src="assets/images/Power bank/100% POWER BANK “J48 NIMBLE” 10000MAH DUAL USB OUTPUT.jpg" alt="">
-                  <h4>100% POWER BANK “J48 NIMBLE” 10000MAH DUAL USB OUTPUT</h4>
-                  <h6>RM 71.80</h6>
-                </div>
-              </a>
-              
-              <a href="Earphone 1.html">
-                <div class="featured-item">
-                  <img src="assets/images/Earphone/EARPOD WITH REMOTE & MIC FOR APPLE IPHONE IPAD IPOD SAMSUNG VIVO HUAWEI OPPO.jpg" alt="">
-                  <h4>EARPOD WITH REMOTE & MIC FOR APPLE IPHONE IPAD IPOD SAMSUNG VIVO HUAWEI OPPO</h4>
-                  <h6>RM 4.00</h6>
-                </div>
-              </a>
-             
-              <a href="Earphone 2.html">
-                <div class="featured-item">
-                  <img src="assets/images/Earphone/A1 HEAD STYLE GAMING HEADSET E-SPORTS PS4  COMPUTER HEADPHONE WITH LED LIGHT MICROPHONE WIRE CONTROL GENERAL.jpg" alt="">
-                  <h4>A1 HEAD STYLE GAMING HEADSET E-SPORTS PS4 / 
-				  COMPUTER HEADPHONE WITH LED LIGHT MICROPHONE WIRE CONTROL GENERAL</h4>
-                  <h6>RM 44.70</h6>
-                </div>
-              </a>
-            
-              <a href="Earphone 3.html">
-                <div class="featured-item">
-                  <img src="assets/images/Earphone/AWEI T26 TWS TRUE WIRELESS SPORTS EARBUDS WITH CHARGING CASE SMART TOUCH FUNCTION WATERPROOF IPX4 LEVEL ORIGINAL AWEI.jpg" alt="">
-                  <h4>AWEI T26 TWS TRUE WIRELESS SPORTS EARBUDS WITH
-				  CHARGING CASE SMART TOUCH FUNCTION WATERPROOF IPX4 LEVEL ORIGINAL AWEI</h4>
-                  <h6>RM 71.80</h6>
-                </div>
-              </a>
+			  <?php
+			}
+			?>
             </div>
           </div>
         </div>
