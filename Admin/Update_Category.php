@@ -189,7 +189,7 @@ body {
 				else
 				{
 
-					mysqli_query($connect,"UPDATE product SET product_category_id='0' WHERE product_category_id='$id'");
+					mysqli_query($connect,"UPDATE product SET product_category_id= NULL WHERE product_category_id='$id'");
 					
 					$product=$_POST['add_product'];
 					
