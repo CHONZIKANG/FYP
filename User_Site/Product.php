@@ -2,6 +2,7 @@
 include("dataconnection.php");
 session_start();
 
+
 if(isset($_GET["view_product"]))
 	{
 		$product_id=$_GET["id"];
@@ -12,25 +13,28 @@ if(isset($_GET["view_product"]))
 	}
 if(isset($_POST['addtocart']))
 {
-		if(isset($_SESSION['id']))
+		if(isset($_SESSION['userid']))
 		{
+			$uid=$_SESSION['userid'];
 			$product_quantity =$_POST['product_quantity'];
-
-			$select_cart=mysqli_query($connect,"SELECT * FROM cart WHERE product_name = '$product_name'");
-			echo mysqli_num_rows($select_cart);
+			$product_name=$_POST['product_name'];
+			//$select_cart=mysqli_query($connect,"SELECT * FROM cart WHERE product_id = '$product_id'");
+			//echo mysqli_num_rows($select_cart);
 			
-			if(mysqli_num_rows($select_cart)>0)
-			{
-			$message[]='product already added to cart';
-			}
-			else
-			{
-				
+			//if(mysqli_num_rows($select_cart)>0)
+			//{
+				$message[]='product already added to cart';
 				$insert_product = mysqli_query($connect,"INSERT INTO cart
-				(product_id,cart_quantity) VALUES('$product_id','$product_quantity')");
+				(product_id,cart_quantity,user_id) VALUES('$product_id','$product_quantity','$uid')");
 				$message[] ='product added to cart succesful!';
-				echo mysqli_error($connect);
-			}
+			//}
+			//else
+			//{
+			/*
+				$insert_product = mysqli_query($connect,"INSERT INTO cart
+				(product_id,cart_quantity,user_id) VALUES('$product_id','$product_quantity','$uid')");
+				$message[] ='product added to cart succesful!';*/
+			//}
 		}
 		else
 		{
@@ -73,17 +77,7 @@ if(isset($_POST['addtocart']))
 	
 
   </head>
-<?php
-	/*if(isset($_GET["view_product"]))
-	{
-		$product_id=$_GET["id"];
-		$single_product=mysqli_query($connect,"SELECT * FROM product WHERE product_id='$product_id'" );
-		$row=mysqli_fetch_assoc($single_product);
-		$product_list=mysqli_query($connect ,"SELECT * FROM product WHERE product_isDelete=0");
-		
-	}*/
 
-?>
   <body>
   <?php
     if(isset($message))
