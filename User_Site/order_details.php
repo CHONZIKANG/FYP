@@ -20,7 +20,7 @@ session_start();
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" href="assets/css/cart_CSS.css">
+
 
 
     <!-- Additional CSS Files -->
@@ -33,9 +33,9 @@ session_start();
 	<link href="https://fonts.googleapis.com/css2?family=Aguafina+Script&family=Alex+Brush&family=Architects+Daughter&family=Birthstone&family=Birthstone+Bounce&family=Roboto&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Roboto&display=swap" rel="stylesheet">
 	
-	<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 
 
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/Order_Details_css.css">
 
 	
@@ -138,7 +138,7 @@ if(isset($_GET['details']))
     <!-- Page Content -->
     <!-- About Page Starts Here -->
     <div class="contact-page">
-      <div style="background-color:#f4f4f4;">
+      <div style="background-color:#f4f4f4; padding:20px">
 
 <div id="info">
 <div id="left">
@@ -165,17 +165,17 @@ if(isset($_GET['details']))
 	
 	<div style="border-bottom: 1px solid rgba(0,0,0,.09);; padding: 20px;">
 	
-		<h3>Order ID </h3>
+		<h4>Order ID </h4>
 		<p style="color:grey; font-size:14px;"><?php echo $row['order_id'];?></p>
-		<h3>Delivery Address </h3>
+		<h4>Delivery Address </h4>
 		
 
 		<p id="receipient_address"><?php echo $row['order_Customer'];?> </p>
 		
 		</br>
 
-		<h3>Tracking Number</h3>
-		<p id="tracking_no"> <?php echo $row['order_tracking'];?></p>
+		<h4>Tracking Status</h4>
+		<p id="tracking_status"> <?php echo $row['order_tracking'];?></p>
 		
 		<div id="delivery_details">
 		<ul>
@@ -235,7 +235,7 @@ if(isset($_GET['details']))
 						<p>Total: </p>
 					</div>
 					
-					<div style="padding: 0px 50px; width: 90px;">
+					<div style="padding: 0px 50px;">
 						<p>RM <?php echo $row['order_Total'];?> </p>
 					</div>
 			</div>
