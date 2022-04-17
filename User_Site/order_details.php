@@ -120,9 +120,9 @@ if(isset($_GET['details']))
 			  <button class="dropbtn">
 			  <a href="#.html" > <i class="far fa-user" title="User Account"></i> </a>
 			  </button>
-			  <div class="dropdown-content">
-			   <a class="nav-link" href="user edit.html">My Account</a> 
-              <a class="nav-link" href="login_form.html">Logout</a>
+			 <div class="dropdown-content">
+			  <a class="nav-link" href="User_Profile.php">My Account</a> 
+              <a class="nav-link" href="Logout.php">Logout</a>
 				</div>
 			  
 			  </div>
@@ -147,7 +147,7 @@ if(isset($_GET['details']))
 <a href="User_Profile.php">My Profile</a>
 <br>
 <br>
-<a href="User_Addresses.php" id="sub">&emsp;Addresses</a>
+<a href="User_Address.php" id="sub">&emsp;Addresses</a>
 <br>
 <br>
 <a href="Change_Password.php" id="sub">&emsp;Change Password</a>
