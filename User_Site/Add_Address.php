@@ -55,12 +55,12 @@ $valid=0;
 
 
 
-if(isset($_GET['save']))
+if(isset($_POST['save']))
 {
 	
-	$receiver_name=$_GET["add_name"];
-	$phone_no=$_GET["add_phoneno"];
-	$delivery_address=$_GET["user_address"];
+	$receiver_name=$_POST["add_name"];
+	$phone_no=$_POST["add_phoneno"];
+	$delivery_address=$_POST["user_address"];
 	
 	if($receiver_name && $phone_no && $delivery_address)
 	{
@@ -181,7 +181,7 @@ if(isset($_GET['save']))
 			</div>
 
 		<div id="right">
-		<form id="form" method="get">
+		<form id="form" method="POST">
 		<div id="title">
 		<h3>New Address</h3>
 		</div>
@@ -193,7 +193,7 @@ if(isset($_GET['save']))
 		<br>	
 		<br>
 		<input type="text" name="add_name" size="50" maxlength="30">
-		<?php if(isset($_GET['save']))
+		<?php if(isset($_POST['save']))
 					{
 						if(empty($receiver_name))
 						{?>
@@ -208,7 +208,7 @@ if(isset($_GET['save']))
 		<br>	
 		<br>
 		<input type="tel" name="add_phoneno" id="p_number" pattern="[0]{1}[1]{1}[0-9]{1}-[0-9]{3}[0-9]{4}">
-		<?php if(isset($_GET['save']))
+		<?php if(isset($_POST['save']))
 					{if(empty($phone_no)){?><span id="error" style="color:red; font-size:14px;"><?php echo "Please enter phone number." ?> </span><?php }	}?>
 		</p>
 
@@ -217,7 +217,7 @@ if(isset($_GET['save']))
 		<br>	
 		<br>	
 		<input type="text" name="user_address" size="50" maxlength="80">
-		<?php if(isset($_GET['save']))
+		<?php if(isset($_POST['save']))
 					{if(empty($delivery_address)){?><span id="error" style="color:red; font-size:14px;"><?php echo "Please enter address." ?> </span><?php }}	?>
 		</p>
 

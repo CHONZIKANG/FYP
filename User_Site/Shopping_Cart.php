@@ -138,7 +138,7 @@ if(!isset($_SESSION['userid']))
 		if($count<1)
 		{
 			?>
-			<span style="text-align:center; padding:60px; font-size:20px; color:grey"><?php echo "Cart is empty.";?></span>
+			<p style="text-align:center; padding:60px; font-size:20px; color:grey"><?php echo "Cart is empty.";?></p>
 			<?php
 		}
 		else
