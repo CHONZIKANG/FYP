@@ -2,6 +2,13 @@
 include("dataconnection.php");
 session_start();
 
+$u_id=$_SESSION['userid'];
+
+if(!isset($_SESSION['userid']))
+{
+	header("Location:Login.php");
+}
+
 
 $error="";
 	$valid=1;
@@ -25,7 +32,6 @@ $error="";
 				$valid=1;			
 			}
 			
-			echo $username;
 			
 			if(empty($email))
 			{
@@ -38,11 +44,10 @@ $error="";
 				$valid=1;			
 			}
 			
-			echo $email;
 			
 			if($valid==1)
 			{
-				$success=mysqli_query($connect,"INSERT INTO contact_us (user_name,user_email,user_message) VALUES ('$username','$email','$message')");
+				$success=mysqli_query($connect,"INSERT INTO contact_us (username,email,message) VALUES ('$username','$email','$message')");
 			}
 			
 			if($success)
