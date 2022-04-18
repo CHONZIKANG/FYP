@@ -102,6 +102,11 @@
 		if($valid==1 && $new_pass_valid==1)
 		{
 			mysqli_query($connect,"UPDATE account SET user_password='$confirm_pass' WHERE user_id='$user_id'");
+			?>
+			<script>
+			alert("Password successfully changed.");
+			</script>
+			<?php
 			header("refresh:0; url:Change_Password.php");
 		}
 			
@@ -206,7 +211,7 @@
 
 		<span id="error" style="color:red; font-size:14px;"><?php echo $error;?></span>
 		<p>
-		Current Password 
+		Current Password<span style="color:red;">*</span>
 		<br>
 		<input type="password" name="useracc_pass" id="acc_password"  size="50" >
 		<br>
@@ -214,7 +219,7 @@
 		</p>
 
 		<p>
-		New Password
+		New Password<span style="color:red;">*</span>
 		<br>
 		<input type="password" id="new_password" name="new_password" size="50 "pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" >
 		<br>
@@ -228,7 +233,7 @@
 
 
 		<p>
-		Confirm Password
+		Confirm Password<span style="color:red;">*</span>
 		<br>
 		<input type="password" id="confirm_password" name="confirm_password" size="50" >
 		<br>

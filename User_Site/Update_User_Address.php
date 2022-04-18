@@ -11,6 +11,19 @@ if(!isset($_SESSION['userid']))
 	header("Location:Login.php");
 }
 $error="";
+
+		
+		if(isset($_GET["update"]))
+		{
+			$address_id=$_GET["delivery_address_id"];
+			
+			
+			$update_address=mysqli_query($connect, "SELECT * FROM address WHERE address_id='$address_id'");
+			
+			$row=mysqli_fetch_assoc($update_address);
+		}
+
+		
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -149,18 +162,7 @@ if(isset($_POST["savebtn"]))
     <!-- About Page Starts Here -->
     <div class="contact-page">
       <div style="background-color:#f4f4f4; padding:25px 0px;">
-		<?php
-		if(isset($_GET["update"]))
-		{
-			$address_id=$_GET["delivery_address_id"];
-			
-			
-			$update_address=mysqli_query($connect, "SELECT * FROM address WHERE address_id='$address_id'");
-			
-			$row=mysqli_fetch_assoc($update_address);
-		}
 
-		?>
 
 		<div id="info">
 	<div id="left">
@@ -189,7 +191,7 @@ if(isset($_POST["savebtn"]))
 
 		<span id="error" style="color:red; font-size:14px;"><?php echo $error;?></span>
 		<p>
-		Fullname
+		Fullname<span style="color:red;">*</span>
 		<br>	
 		<br>
 		<input type="text" name="update_name" size="50" maxlength="30"  value="<?php echo $row['receiver_name']?>">
@@ -198,7 +200,7 @@ if(isset($_POST["savebtn"]))
 		</p>
 
 		<p>
-		Phone Number
+		Phone Number<span style="color:red;">*</span>
 		<br>	
 		<br>
 		<input type="tel" name="update_name_phoneno" id="p_number" pattern="[0]{1}[1]{1}[0-9]{1}-[0-9]{3}[0-9]{4}" value="<?php echo $row['receiver_phone_number']?>">
@@ -206,7 +208,7 @@ if(isset($_POST["savebtn"]))
 		</p>
 
 		<p>
-		Address
+		Address<span style="color:red;">*</span>
 		<br>	
 		<br>	
 		<input type="text" name="update_address" size="50" maxlength="80" value="<?php echo $row['receiver_address']?>">

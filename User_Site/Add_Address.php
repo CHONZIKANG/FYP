@@ -189,7 +189,7 @@ if(isset($_POST['save']))
 		<br>
 
 		<p>
-		Fullname
+		Fullname<span style="color:red;">*</span>
 		<br>	
 		<br>
 		<input type="text" name="add_name" size="50" maxlength="30">
@@ -204,7 +204,7 @@ if(isset($_POST['save']))
 		</p>
 
 		<p>
-		Phone Number
+		Phone Number<span style="color:red;">*</span>
 		<br>	
 		<br>
 		<input type="tel" name="add_phoneno" id="p_number" pattern="[0]{1}[1]{1}[0-9]{1}-[0-9]{3}[0-9]{4}">
@@ -213,7 +213,7 @@ if(isset($_POST['save']))
 		</p>
 
 		<p>
-		Address
+		Address<span style="color:red;">*</span>
 		<br>	
 		<br>	
 		<input type="text" name="user_address" size="50" maxlength="80">

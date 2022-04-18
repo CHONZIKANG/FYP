@@ -232,6 +232,26 @@ if(isset($_GET['details']))
 			
 			<div style="display: flex; padding: 10px; justify-content: flex-end; border-bottom: 1px solid rgba(0,0,0,.09);;">
 					<div>
+						<p>Order Date: </p>
+					</div>
+					
+					<div style="padding: 0px 50px;">
+						<p><?php echo $row['order_Date'];?> </p>
+					</div>
+			</div>
+			
+			<div style="display: flex; padding: 10px; justify-content: flex-end; border-bottom: 1px solid rgba(0,0,0,.09);;">
+					<div>
+						<p>Payment Method: </p>
+					</div>
+					
+					<div style="padding: 0px 50px;">
+						<p> <?php echo $row['order_payment_method'];?> </p>
+					</div>
+			</div>
+			
+			<div style="display: flex; padding: 10px; justify-content: flex-end; border-bottom: 1px solid rgba(0,0,0,.09);;">
+					<div>
 						<p>Total: </p>
 					</div>
 					
@@ -239,6 +259,8 @@ if(isset($_GET['details']))
 						<p>RM <?php echo $row['order_Total'];?> </p>
 					</div>
 			</div>
+			
+			
 			
 			
 			
