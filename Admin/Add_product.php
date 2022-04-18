@@ -17,7 +17,6 @@ $admin_ID=$_SESSION['adminid'];
 	if(isset($_POST["send"]))
 	{
 		$name = $_POST["name"];
-		$Category=$_POST["Category"];
 		$brand = $_POST["brand"];
 		$price = $_POST["price"];
 		$des = $_POST["des"];
@@ -178,7 +177,7 @@ body {
                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mx-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="index.html">Dashboard
+                                    <a class="nav-link" href="dashboard.php">Dashboard
                                         <span class="sr-only">(current)</span>
                                     </a>
                                 </li>
