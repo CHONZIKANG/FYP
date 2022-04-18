@@ -210,7 +210,7 @@ if($invalid)
 <p>
 User Name <span id="asterisk">*</span>
 <br>
-<input type="text" name="u_name" size="50" maxlength="50" value=<?php  echo $row['user_name']; ?> required>
+<input type="text" name="u_name" size="50" maxlength="50" value="<?php  echo $row['user_name']; ?>" required>
 </p>
 
 <p>
