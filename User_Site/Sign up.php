@@ -95,16 +95,11 @@ if(isset($_GET["submitbtn"]))
 <title>Electronic Gadget Store </title>
 
 
-<link rel="stylesheet" href="assets/css/Sign up1.css">
+<link rel="stylesheet" href="assets/css/Signup.css">
 <link href="https://fonts.googleapis.com/css2?family=Aguafina+Script&family=Alex+Brush&family=Architects+Daughter&family=Birthstone&family=Birthstone+Bounce&family=Roboto&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 
-<script>
-function myFunction() 
-{
-  alert("You have successfully register your account !");
-}
-</script>
+
 </head>
 <body>
 
@@ -117,8 +112,8 @@ function myFunction()
 </head>
 <body style="background-color:#f4f4f4;">
 
-<div class="signin">
-<form name="signin_frm" method="GET" id="form">
+<div class="signup">
+<form name="signup_frm" method="GET" id="form">
 <h1 style="text-align : center;"> Sign UP</h1>
 
 <p>
@@ -165,7 +160,7 @@ Gender <span style="color:red;">*</span>
 
 
 <div style="display: block; width:45%;margin:auto;">
-<input type="submit" name="submitbtn" value="Sign up" style="height:40px;" id="submit_btn" onclick="verification()">
+<input type="submit" name="submitbtn" value="Sign up" style="height:40px;" id="submit_btn">
 <br><br>
 <a href="Login.php">Back</a>
 </div>
