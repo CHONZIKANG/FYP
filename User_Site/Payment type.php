@@ -60,7 +60,7 @@ if(isset($_GET["submitbtn"]))
 															VALUES('$product_name','$card_type','$grand_total','$product_image','$product_price','$address', '$date','$product_quantity','$user_id')");
 											
 											
-			header("location:feedback.php");
+			
 		 
       }
 
@@ -174,12 +174,13 @@ if(isset($_GET["submitbtn"]))
 		<script>
 		
 			alert("You Have Succesfully Make Full Payment.Thank You!");
+			
 
 		</script>
 		
 		<?php
 		
-		header("refresh:0; url=Payment type.php"); 
+		header("refresh:0; url=feedback.php"); 
 		}
 }
 ?>
