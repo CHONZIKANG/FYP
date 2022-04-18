@@ -148,7 +148,7 @@ body {
 <form name="add_product_form" method="POST">
 <div class="updt_box">
 <div id="title">
-<h2> Update Order detail </h2>
+<h2> Update Product detail </h2>
 </div>
 <hr>
 <p>
