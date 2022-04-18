@@ -1,6 +1,6 @@
 <?php
 include("dataconnection.php");
-
+session_start();
 if(!isset($_SESSION['adminid']))
 	{
 		header("Location:admin login.php");
