@@ -191,11 +191,14 @@ body {
 					mysqli_query($connect,"UPDATE product SET product_category_id= NULL WHERE product_category_id='$id'");
 					
 					$product=$_POST['add_product'];
+					$name=$_POST['category_name'];
 					
 					for($i=0; $i<count($product);$i++)
 					{
 						$success=mysqli_query($connect,"UPDATE product SET product_category_id='$id' WHERE product_id='$product[$i]'");
 					}
+					
+					$success=mysqli_query($connect,"UPDATE category SET category_name='$name' WHERE category_id='$id' ");
 					
 					if($success)
 					{
