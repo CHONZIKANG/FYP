@@ -142,7 +142,7 @@ body {
                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mx-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="index.html">Dashboard
+                                    <a class="nav-link" href="dashboard.php">Dashboard
                                         <span class="sr-only">(current)</span>
                                     </a>
                                 </li>
@@ -166,7 +166,6 @@ body {
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 										<a class="dropdown-item" href="Manage Product list.php">View Product</a>
                                         <a class="dropdown-item" href="Add_Product.php">Add Product</a>
-										<a class="dropdown-item" href="Update Product.php">Update Product</a>
 										<a class="dropdown-item" href="Manage_Category.php">Category</a>
 										
 
