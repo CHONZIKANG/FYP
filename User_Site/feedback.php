@@ -35,7 +35,7 @@ if(!isset($_SESSION['userid']))
 		
 		if($valid==1)
 		{
-			$success=mysqli_query($connect,"INSERT INTO feedback (rating,Suggestions) VALUES ('$rating','$Suggestions')");
+			$success=mysqli_query($connect,"INSERT INTO feedback (rating,Suggestions,user_id) VALUES ('$rating','$Suggestions','$u_id')");
 		}
 		
 		if($success)
