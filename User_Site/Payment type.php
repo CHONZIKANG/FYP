@@ -5,6 +5,10 @@ session_start();
 
 $user_id=$_SESSION['userid'];
 
+if(!isset($_SESSION['userid']))
+{
+	header("Location:Login.php");
+}
 
 if(isset($_GET["checkout"]))
 	{
