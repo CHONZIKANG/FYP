@@ -129,7 +129,7 @@ body {
             </div>
         </div>
 		</div>
-		
+		<form method="POST" name="managemembers">
 		<div style="background-color:#f4f4f4; padding:20px; margin: 15px;">
 
 		<div class="memberstable">
@@ -199,6 +199,7 @@ body {
 
 
 		</div>
+		</form>
 		
 
 
