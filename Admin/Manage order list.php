@@ -1,6 +1,10 @@
 <?php
 include("dataconnection.php");
-session_start();
+ob_start();
+
+
+session_start(); 
+
 if(!isset($_SESSION['adminid']))
 	{
 		header("Location:admin login.php");
@@ -8,46 +12,6 @@ if(!isset($_SESSION['adminid']))
 	
 $admin_ID=$_SESSION['adminid'];
 
-if(isset($_GET["id"]))
-{
-	$order=$_GET["id"];
-	$result=mysqli_query($connect,"SELECT * from orderdetail WHERE order_id='$order'");
-	$row=mysqli_fetch_assoc($result);
-}
-if(isset($_POST["update_button"]))
-{
-	$Uorder_id=$_POST["Uorder_id"];
-	$Uorder_number=$_POST["Uorder_number"];
-	$Ucustomer_ID=$_POST["Ucustomer_ID"];
-	$Uproduct_name=$_POST["Uproduct_name"];
-	$Uproduct_stock=$_POST["Uproduct_stock"];
-	$Uunit_price=$_POST["Uunit_price"];
-	$Utotal=$_POST["Utotal"];
-	$Ucustomer_address=$_POST["Ucustomer_address"];
-	$Ustatus=$_POST["Ustatus"];
-	$Utracking=$_POST["Utracking"];
-	$Uorder_date=date('Y-m-d', strtotime($_POST["Uorder_date"]));
-	$Payment_method=$_POST["Payment_method"];
-	$Shipping_option=$_POST["Shipping_option"];
-	
-	mysqli_query($connect,"UPDATE orderdetail SET 
-	order_id='$Uorder_id', 
-	order_number='$Uorder_number',
-	customer_id='$Ucustomer_ID',
-	order_product_name='$Uproduct_name',
-	order_quantity='$Uproduct_stock',
-	order_unit_price=$Uunit_price,
-	order_Total=$Utotal,
-	order_Customer='$Ucustomer_address',
-	order_Status='$Ustatus',
-	order_tracking='$Utracking',
-	order_Date='$Uorder_date',
-	order_payment_method='$Payment_method',
-	order_Shipping='$Shipping_option'");
-	
-}
-
-mysqli_close($connect);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,14 +20,16 @@ mysqli_close($connect);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Update_Product | Electronic Gadget Store</title>
+    <title>Manage Order | Electronic Gadget Store</title>
     
 	
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600">
 	
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+		
 	
 	<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+	
 	
     <!-- https://fonts.google.com/specimen/Open+Sans -->
     <link rel="stylesheet" href="css/fontawesome.min.css">
@@ -71,22 +37,32 @@ mysqli_close($connect);
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- https://getbootstrap.com/ -->
     <link rel="stylesheet" href="css/tooplate.css">
+
+	<link rel="stylesheet" href="view_product_list1.css">
+<script>
+function confirmation()
+{
+	var option;
+	option=confirm("Do you want to delete the record");
+	return option;
 	
-	<link rel="stylesheet" href="css/Update.css">
-	
-	<link rel="stylesheet" href="css/view_product_list1.css">
-	
+}
+ </script>
 
 <style>
 body {
 	  
   background-image: url('img/dash-bg-03.jpg');
 }
-
 </style>
 
-</head>
 
+
+</head>
+<?php
+   $order_list=mysqli_query($connect ,"SELECT * FROM order_list");
+
+?>
 <body class="bg03">
     <div class="container">
         <div class="row">
@@ -157,92 +133,96 @@ body {
             </div>
         </div>
 		</div>
+		
+<br>
+
+<div style="background-color:white; border-radius:30px; padding:50px; width:1425px;">
+
+<h2>View Order Detail</h2>
+    <div class="outer-wrapper">
+    <div class="table-wrapper">
+    <table id="emp-table">
+        <head>
+            <th col-index = 1>No</th>
+            <th col-index = 3>Customer ID
+            </th>
+			<th col-index = 4>Product Name
+            </th>
+			<th col-index = 5>Quantity
+            </th>
+            <th col-index = 6>Unit Price(RM)
+            </th>
+            <th col-index = 7>Payment Method
+            </th>
+			<th col-index = 8>Total (included shipping fee)
+            </th>
+			<th col-index = 9>Customer Address
+            </th>
+			<th col-index = 10>Order Date 
+            </th>
+			<th col-index = 11>Status 
+            </th>
+			<th col-index = 12>Shipping option 
+            </th>
+			<th col-index = 13>tracking  
+            </th>
+			<th col-index = 14>Edit
+			</th>
+			<th col-index = 15>Delete 
+            </th>
+            
+        </head>
+        <body>
+		<?php
 	
-		<br>
-		<br>
+		while($row=mysqli_fetch_assoc($order_list))
+		{
+		?>
+            <tr>
+                <td><?php echo $row["order_id"];?></td>
+				<td><?php echo $row["customer_id"];?></td>
+                <td><?php echo $row["order_product_name"];?></td>
+                <td><?php echo $row["order_quantity"];?></td>
+                <td><?php echo $row["order_unit_price"];?></td>
+				<td><?php echo $row["order_payment_method"];?></td>
+                <td><?php echo $row["order_Total"];?></td>
+				<td><?php echo $row["order_Customer"];?></td>
+				<td><?php echo $row["order_Date"];?></td>
+				<td><?php echo $row["order_Status"];?></td>
+				<td><?php echo $row["order_Shipping"];?></td>
+				<td><?php echo $row["order_tracking"];?></td>
+				<td><a href="Update order list.php?id=<?php echo $row ['order_id']?>">Edit</td>
+				<td><a href="Manage order list.php?delete&id=<?php echo $row ['order_id']?>" onclick="return confirmation()">Delete<td>
+				
+            </tr>
+		<?php
+		}
+		?>
+        </body>
+    </table>
+	<?php 
+	if(isset($_GET['delete']))
+	{
+		$id=$_GET['id'];
+		mysqli_query($connect,"DELETE from order_list WHERE order_id='$id'");	
+	?>
+	<script>
+	alert("Record deleted!");
+	</script>
+	<?php 
+	header("refresh:0; url='Manage order list.php'");
+	}
+	mysqli_close($connect);
+	?>
+</div>
+</div>
+
+
+<div style="width:1000px; margin:auto;">
+		</div>
 		
-		<div class="update">
-		
-<form name="add_product_form" method="POST">
-<div class="updt_box">
-<div id="title">
-<h2> Update Order detail </h2>
-</div>
-<hr>
-<p>
-Customer ID:<br>
-<input type="text" name="Uorder_id" value="<?php echo $row["order_id"];?>"required  >
-</p>
-Update Order Number:<br>
-<input type="text" name="Uorder_number" size="50" maxlength="45" value="<?php echo $row["order_number"];?>"required  >
-</p>
-<p>
-Update Customer ID:<br>
-<input type="text" name="Ucustomer_ID" size="50" maxlength="45" value="<?php echo $row["customer_id"];?>"required >
-</p>
-<p>
-<p>
-Update Product Name:<br>
-<input type="text" name="Uproduct_name" size="50" maxlength="45"value="<?php echo $row["order_product_name"];?>"required >
-</p>
-
-<p>
-Update Quantity<br>
-<input type="number" name="Uproduct_stock" id="Uproduct_stock"  min="1" max="999" value="<?php echo $row["order_quantity"];?>"value="1"">
-</p>
-Update Unit Price:<br>
-<input type="text" name="Uunit_price" size="50" maxlength="45" value="<?php echo $row["order_unit_price"];?>"required >
-</p>
-
-<p>
-Update Total (included shipping fee):<br>
-<input type="text" name="Utotal" size="50" maxlength="45"value="<?php echo $row["order_Total"];?>"required >
-</p>
-
-<p>
-Update Customer Address:<br>
-<input type="text" name="Ucustomer_address" size="100" maxlength="100" value="<?php echo $row["order_Customer"];?>"required >
-</p>
 
 
-
-<p>
-Update Status:<br>
-<input type="text" name="Ustatus" size="50" maxlength="45" value="<?php echo $row["order_Status"];?>"required >
-</p>
-
-<p>
-Update tracking:<br>
-<input type="text" name="Utracking" size="50" maxlength="45" value="<?php echo $row["order_tracking"];?>"required >
-</p>
-
-<p>
-Update Order date:<br>
-<input type="date" name="Uorder_date" value="<?php echo $row["order_Date"];?>">
-</p>
-
-<p>
-Update Payment Method:<br>
-<input type="text" name="Payment_method" size="50" maxlength="45" value="<?php echo $row["order_payment_method"];?>"required >
-</p>
-
-<p>
-Update Shipping:<br>
-<input type="text" name="Shipping_option" size="50" maxlength="45" value="<?php echo $row["order_Shipping"];?>"required >
-</p>
-
-</div>
-<br>
-<br>
-
-<div style="width:500px; margin:auto;">
-<div id="btn_update"><input type="submit" name="update_button" value="Update Order"></div>
-</div>
-</form>
-</div>
-
-			<br>
-			<br>
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <!-- https://jquery.com/download/ -->
