@@ -1,6 +1,6 @@
 <?php
 include("dataconnection.php");
-
+ob_start();
 
 session_start(); 
 
@@ -206,13 +206,14 @@ body {
 					$success=mysqli_query($connect,"UPDATE product SET product_category_id='$categoryid' WHERE product_id='$product[$i]'");
 				}
 				
-				//if($success)
-				//{
-				//	?>
+				if($success)
+				{
+					?>
 				
-					<script> alert("Category update sucessfully.");</script>
+					<script> alert("Category added sucessfully.");</script>
 				<?php
-				//}
+					header('Location: Manage_Category.php');
+				}
 			}
 			
 		}

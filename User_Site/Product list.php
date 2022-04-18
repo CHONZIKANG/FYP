@@ -128,6 +128,23 @@ session_start();
               <h1>Limited Edition</h1>
             </div>
           </div>
+		  
+		  <div class="col-md-8 col-sm-12">
+            <div id="filters" class="button-group">
+             <button class="btn btn-primary" data-filter="*">All Products</button>
+			 <?php
+			  $category=mysqli_query($connect,"SELECT * FROM category");
+			  
+			  while($category_row=mysqli_fetch_assoc($category))
+			  {
+			  
+			  ?>
+              <button class="btn btn-primary" data-filter=".<?php echo $category_row['category_id'];?>"><?php echo $category_row['category_name'];  ?></button>
+				<?php
+			  }
+				?>
+            </div>
+          </div>
           
         </div>
       </div>
@@ -141,7 +158,7 @@ session_start();
 	while($row=mysqli_fetch_assoc($product_list))
 	{
 	?>
-            <div id="1" class="item Cable col-md-4">
+            <div id="1" class="item <?php echo $row['product_category_id'];?> col-md-4">
               <a href="Product.php?view_product&id=<?php echo $row["product_id"];?>">
                 <div class="featured-item">
                  <?php echo "<img style='width:100%; height:55%; float:left; margin-right:10px;' src='assets/images/".$row['product_image']."' >";  ?>
