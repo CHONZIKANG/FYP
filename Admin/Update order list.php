@@ -29,22 +29,27 @@ if(isset($_POST["update_button"]))
 	$Payment_method=$_POST["Payment_method"];
 	$Shipping_option=$_POST["Shipping_option"];
 	
-	mysqli_query($connect,"UPDATE order_list SET 
-	order_id='$Uorder_id', 
+
+	$success=mysqli_query($connect,"UPDATE order_list SET 
 	customer_id='$Ucustomer_ID',
 	order_product_name='$Uproduct_name',
 	order_quantity='$Uproduct_stock',
 	order_unit_price=$Uunit_price,
-	order_Total=$Utotal,
+	order_Total='$Utotal',
 	order_Customer='$Ucustomer_address',
 	order_Status='$Ustatus',
 	order_tracking='$Utracking',
 	order_Date='$Uorder_date',
 	order_payment_method='$Payment_method',
-	order_Shipping='$Shipping_option'");
+	order_Shipping='$Shipping_option'
+	WHERE order_id='$order'");
 	
+	if($success)
+	{
+		header("refresh:0; url=Manage Order list.php");
+	}
 }
-header("refresh:0; location:Update Order list.php");
+
 mysqli_close($connect);
 ?>
 <!DOCTYPE html>
