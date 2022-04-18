@@ -17,13 +17,15 @@ if(isset($_GET["id"]))
 	$result=mysqli_query($connect,"SELECT * from product WHERE product_id='$product_list'");
 	$row=mysqli_fetch_assoc($result);
 }
-if(isset($_Post["update_button"]))
+if(isset($_POST["update_button"]))
 {
 	$Uproduct_name=$_POST["Uproduct_name"];
 	$Uproduct_Brand=$_POST["Uproduct_Brand"];
 	$Uproduct_price=$_POST["Uproduct_price"];
 	$Uproduct_quantity=$_POST["Uproduct_quantity"];
 	
+	
+
 	$success=mysqli_query($connect,"UPDATE product SET   
 	product_name='$Uproduct_name',
 	product_brand='$Uproduct_Brand',
