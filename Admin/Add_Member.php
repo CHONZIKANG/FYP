@@ -17,7 +17,7 @@ $admin_ID=$_SESSION['adminid'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Add Category | Electronic Gadgets Online</title>
+    <title>Add Member | Electronic Gadgets Online</title>
     
 	
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600">

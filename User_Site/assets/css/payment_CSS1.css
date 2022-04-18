@@ -1,8 +1,8 @@
-*{font-family: 'Roboto', sans-serif;} 
+*{font-family: 'Roboto', sans-serif;}
 h2{text-align:center;}
 
 
-input[type=text],input[type=email], [type=date]
+input[type=text], [type=email]
 {
 	height:25px;
 	border-style:none;

@@ -2,6 +2,7 @@
 include("dataconnection.php");
 session_start();
 
+
 if(isset($_GET["view_product"]))
 	{
 		$product_id=$_GET["id"];
@@ -12,25 +13,28 @@ if(isset($_GET["view_product"]))
 	}
 if(isset($_POST['addtocart']))
 {
-		if(isset($_SESSION['id']))
+		if(isset($_SESSION['userid']))
 		{
+			$uid=$_SESSION['userid'];
 			$product_quantity =$_POST['product_quantity'];
-
-			$select_cart=mysqli_query($connect,"SELECT * FROM cart WHERE product_name = '$product_name'");
-			echo mysqli_num_rows($select_cart);
+			$product_name=$_POST['product_name'];
+			//$select_cart=mysqli_query($connect,"SELECT * FROM cart WHERE product_id = '$product_id'");
+			//echo mysqli_num_rows($select_cart);
 			
-			if(mysqli_num_rows($select_cart)>0)
-			{
-			$message[]='product already added to cart';
-			}
-			else
-			{
-				
+			//if(mysqli_num_rows($select_cart)>0)
+			//{
+				$message[]='product already added to cart';
 				$insert_product = mysqli_query($connect,"INSERT INTO cart
-				(product_id,cart_quantity) VALUES('$product_id','$product_quantity')");
+				(product_id,cart_quantity,user_id) VALUES('$product_id','$product_quantity','$uid')");
 				$message[] ='product added to cart succesful!';
-				echo mysqli_error($connect);
-			}
+			//}
+			//else
+			//{
+			/*
+				$insert_product = mysqli_query($connect,"INSERT INTO cart
+				(product_id,cart_quantity,user_id) VALUES('$product_id','$product_quantity','$uid')");
+				$message[] ='product added to cart succesful!';*/
+			//}
 		}
 		else
 		{
@@ -54,7 +58,7 @@ if(isset($_POST['addtocart']))
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 
-    <title>Electronic Gadget Store</title>
+    <title>Electronic Gadgets Online</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -73,17 +77,7 @@ if(isset($_POST['addtocart']))
 	
 
   </head>
-<?php
-	/*if(isset($_GET["view_product"]))
-	{
-		$product_id=$_GET["id"];
-		$single_product=mysqli_query($connect,"SELECT * FROM product WHERE product_id='$product_id'" );
-		$row=mysqli_fetch_assoc($single_product);
-		$product_list=mysqli_query($connect ,"SELECT * FROM product WHERE product_isDelete=0");
-		
-	}*/
 
-?>
   <body>
   <?php
     if(isset($message))
@@ -100,7 +94,7 @@ if(isset($_POST['addtocart']))
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <span>Official Webside Electronic Gadget Store</span>
+          <span>Official Website Electronic Gadget Online</span>
           </div>
         </div>
       </div>
@@ -109,7 +103,7 @@ if(isset($_POST['addtocart']))
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
       <div class="container">
-       <a class="navbar-brand" href="#"><p style="font-family: 'Birthstone', cursive; color:#0000cd; font-size:3.25em;">Electronic Gadget Store</p></a>
+       <a class="navbar-brand" href="#"><p style="font-family: 'Birthstone', cursive; color:#0000cd; font-size:3.25em;">Electronic Gadgets Online</p></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -335,7 +329,7 @@ if(isset($_POST['addtocart']))
         <div class="row">
           <div class="col-md-12">
             <div class="copyright-text">
-              <p>Copyright &copy; 2021 Electronic Gadget Store(MLK) SDN.BHD. 
+               <p>Copyright &copy; 2022 Electronic Gadgets Online (MLK) SDN.BHD. 
                 
           
             </div>

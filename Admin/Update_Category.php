@@ -18,7 +18,7 @@ $admin_ID=$_SESSION['adminid'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Add Category | Electronic Gadgets Online</title>
+    <title>Update Category | Electronic Gadgets Online</title>
     
 	
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600">
@@ -189,7 +189,7 @@ body {
 				else
 				{
 
-					mysqli_query($connect,"UPDATE product SET product_category_id='0' WHERE product_category_id='$id'");
+					mysqli_query($connect,"UPDATE product SET product_category_id= NULL WHERE product_category_id='$id'");
 					
 					$product=$_POST['add_product'];
 					

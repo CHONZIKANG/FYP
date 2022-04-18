@@ -119,7 +119,7 @@ $count=mysqli_num_rows($purchase);
     <!-- About Page Starts Here -->
     <div class="contact-page">
       
-	<div class="purchase" style="background-color:#f4f4f4;">
+	<div class="purchase" style="background-color:#f4f4f4; padding:20px;">
 
 	<div id="info">
 	<div id="left">
@@ -144,7 +144,7 @@ $count=mysqli_num_rows($purchase);
 	</div>
 
 
-	<div style="display: flex; justify-content: center;">
+	<div style="display: flex;">
 
 	<?php
 		if($count<1)
@@ -157,7 +157,7 @@ $count=mysqli_num_rows($purchase);
 		{
 
 	?>	
-		<div style="padding: 27px 20px;  width: 530px;">
+		<div style="padding: 27px 20px;  width: 500px;">
 			<p>
 				Product
 			</p>
@@ -215,7 +215,7 @@ $count=mysqli_num_rows($purchase);
 					</p>
 				</div>
 				
-				<div style="padding: 0px 20px; width:100px; overflow-wrap: break-word;">	
+				<div style="padding: 0px 20px; width:110px; overflow-wrap: break-word;">	
 					<p>
 						<span><p>RM <?php echo $row['order_unit_price']; ?></p></span>
 					
@@ -240,7 +240,7 @@ $count=mysqli_num_rows($purchase);
 			</div>
 			
 			
-			<div id="bottom" style="margin: 25px 5px 25px 530px;">
+			<div id="bottom" style="margin: 25px 5px 25px 570px;">
 				<a href="order_details.php?details&id=<?php echo $row['order_id'];?>" id="Order_details_btn">Order Details</a>
 			</div>
 			

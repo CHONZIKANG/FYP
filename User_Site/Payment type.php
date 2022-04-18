@@ -24,6 +24,7 @@ if(isset($_GET["submitbtn"]))
 	$Years=$_GET["expyear"];
 	$Month=$_GET["expmonth"];
 	$Cvv=$_GET["cvv"];
+	$date=date("Y-m-d");
 
    $cart_query = mysqli_query($connect, "SELECT * FROM `cart` WHERE user_id='$user_id'");
    $price_total = 0;
@@ -41,17 +42,20 @@ if(isset($_GET["submitbtn"]))
 		  $product_quantity = $product_item['cart_quantity'];
 		  $grand_total=$product_price * $product_quantity; 
 		  $product_image=$product_row['product_image'];
+		  
 		  $success=mysqli_query($connect,"INSERT INTO transaction(name_on_card,email,address,city,card_type,card_number,user_cvv,card_month,card_year,user_id,product_name,product_price,product_image)VALUES('$Yourname','$email','$address','$city','$card_type','$Cardnumber','$Cvv','$Month','$Years', '$user_id','$product_name','$product_price','$product_image')");
+
+		  
 		  $balance =  $product_row["product_qty"] - $product_quantity; 
 			
 		if($balance>=0)
 		{
 			mysqli_query($connect,"UPDATE product SET product_qty='$balance' WHERE product_id='$id' ");// update product table
 		}
-		  $success=mysqli_query($connect,"INSERT INTO order_list(order_product_name,order_payment_method,order_Total,order_image,order_unit_price,order_Customer,order_quantity,customer_id)
-															VALUES('$product_name','$card_type','$grand_total','$product_image','$product_price','$address','$product_quantity','$user_id')");
+		  $success=mysqli_query($connect,"INSERT INTO order_list(order_product_name,order_payment_method,order_Total,order_image,order_unit_price,order_Customer, order_Date,order_quantity,customer_id)
+															VALUES('$product_name','$card_type','$grand_total','$product_image','$product_price','$address', '$date','$product_quantity','$user_id')");
 											
-															
+											
 			header("location:feedback.php");
 		 
       }
@@ -62,7 +66,6 @@ if(isset($_GET["submitbtn"]))
 
     $error="";
 	$valid=1;
-	$success=0;
 	if(empty($Yourname))
 		{
 			$error="Please enter this field.";
@@ -180,10 +183,7 @@ if(isset($_GET["submitbtn"]))
 <html>
 <head>
 <title>Electronice Gadgets Store | Free shipping across Malaysia</title>
-<script type="text/javascript">
-function payment(){
-alert("You have successfully complete the transaction");
-}
+
 </script>
 <link rel="stylesheet" href="assets/css/payment_CSS1.css">
 </head>
@@ -255,8 +255,7 @@ Card Type :
 <p>
 Credit card number:
 <input type="text" id="ccnum" name="cardnumber" placeholder="####-####-####-####"  type="tel"
-                pattern="[0-9]{16}"
-                maxlength="16"  required></p>
+                pattern="^\d{4}-\d{4}-\d{4}-\d{4}$" required></p>
 
 <p>
 Exp Month:
@@ -276,7 +275,7 @@ CVV:
 <br>
 <div style="width:150px; margin:auto;">
 
-<input type="submit" name="submitbtn" value="Continue to checkout"onclick="payment()" class="btn" >
+<input type="submit" name="submitbtn" value="Continue to checkout" class="btn" >
 </div>
 <br>
 <br>
