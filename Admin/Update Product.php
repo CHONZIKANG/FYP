@@ -23,15 +23,21 @@ if(isset($_Post["update_button"]))
 	$Uproduct_Brand=$_POST["Uproduct_Brand"];
 	$Uproduct_price=$_POST["Uproduct_price"];
 	$Uproduct_quantity=$_POST["Uproduct_quantity"];
-	mysqli_query($connect,"UPDATE product SET  
+	
+	$success=mysqli_query($connect,"UPDATE product SET   
 	product_name='$Uproduct_name',
 	product_brand='$Uproduct_Brand',
 	product_price='$Uproduct_price',
-	product_qty='$Uproduct_quantity'");
+	product_qty='$Uproduct_quantity'
+	WHERE product_id='$product_list'");
 	
-	
+	if($success)
+	{?>
+		<script>alert("You have successfully updated")</script>
+		<?php
+		header("refresh:0; url=Manage Product list.php");
+	}
 }
-header("refresh:0; location:Update Product.php");
 mysqli_close($connect);
 ?>
 <!DOCTYPE html>
