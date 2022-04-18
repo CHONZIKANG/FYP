@@ -23,6 +23,9 @@ h2 {
 
 
 .outer-wrapper {
+
+    overflow-y: scroll;
+    overflow-x: scroll;
     margin-top: 40px;
     margin-left: 20px;
     margin-right: 20px;
@@ -60,6 +63,7 @@ table {
 }
 
 table th{
+
     position: sticky; 
     top: 0px;
     
