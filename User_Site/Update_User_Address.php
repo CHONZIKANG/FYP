@@ -117,14 +117,12 @@ if(!isset($_SESSION['userid']))
 		{
 			$address_id=$_GET["delivery_address_id"];
 			
-			//echo $address_id;
 			
 			$update_address=mysqli_query($connect, "SELECT * FROM address WHERE address_id='$address_id'");
 			
 			$row=mysqli_fetch_assoc($update_address);
 		}
 
-		//$id = $row['address_id'];
 		?>
 
 		<div id="info">
