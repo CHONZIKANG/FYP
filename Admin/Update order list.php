@@ -59,7 +59,7 @@ mysqli_close($connect);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Update_Product | Electronic Gadget Store</title>
+    <title>Update_Order | Electronic Gadget Store</title>
     
 	
 
@@ -170,7 +170,7 @@ body {
 </div>
 <hr>
 <p>
-Customer ID:<br>
+Order ID:<br>
 <input type="text" name="Uorder_id" value="<?php echo $row["order_id"];?>"required  >
 </p>
 <p>
