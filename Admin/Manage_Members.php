@@ -28,10 +28,10 @@ $i=0;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Add Category | Electronic Gadgets Online</title>
+    <title>Manage Members | Electronic Gadgets Online</title>
     
 	
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600">
+  
 	
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 	
@@ -45,7 +45,6 @@ $i=0;
     <!-- https://getbootstrap.com/ -->
     <link rel="stylesheet" href="css/tooplate.css">
 	
-	<link rel="stylesheet" href="css/Product.css">
 	
 
 <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
