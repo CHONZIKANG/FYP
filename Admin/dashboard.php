@@ -126,7 +126,6 @@ body {
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 										<a class="dropdown-item" href="Manage Product list.php">View Product</a>
                                         <a class="dropdown-item" href="Add_Product.php">Add Product</a>
-										<a class="dropdown-item" href="Update Product.php">Update Product</a>
 										<a class="dropdown-item" href="Manage_Category.php">Category</a>
 										
 
