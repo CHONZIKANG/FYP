@@ -241,7 +241,7 @@ body {
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="Manage order list.php">Order</a>
+                                    <a class="nav-link" href="Manage Order list.php">Order</a>
                                 </li>
 								
 								<li class="nav-item">
