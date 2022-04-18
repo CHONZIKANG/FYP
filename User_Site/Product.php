@@ -58,7 +58,7 @@ if(isset($_POST['addtocart']))
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 
-    <title>Electronic Gadget Store</title>
+    <title>Electronic Gadgets Online</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -94,7 +94,7 @@ if(isset($_POST['addtocart']))
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <span>Official Webside Electronic Gadget Store</span>
+          <span>Official Website Electronic Gadget Online</span>
           </div>
         </div>
       </div>
@@ -103,7 +103,7 @@ if(isset($_POST['addtocart']))
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
       <div class="container">
-       <a class="navbar-brand" href="#"><p style="font-family: 'Birthstone', cursive; color:#0000cd; font-size:3.25em;">Electronic Gadget Store</p></a>
+       <a class="navbar-brand" href="#"><p style="font-family: 'Birthstone', cursive; color:#0000cd; font-size:3.25em;">Electronic Gadgets Online</p></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -329,7 +329,7 @@ if(isset($_POST['addtocart']))
         <div class="row">
           <div class="col-md-12">
             <div class="copyright-text">
-              <p>Copyright &copy; 2021 Electronic Gadget Store(MLK) SDN.BHD. 
+               <p>Copyright &copy; 2022 Electronic Gadgets Online (MLK) SDN.BHD. 
                 
           
             </div>
