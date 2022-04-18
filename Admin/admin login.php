@@ -31,7 +31,7 @@ session_start();
 		<script type="text/javascript">
 		
 			alert("You are login successfully");
-			window.location.href = "receive.php";
+			window.location.href = "dashboard.php";
 
 		</script>
 		
