@@ -228,6 +228,9 @@ processed. All information exchange is secured.</p>
 				
 			}
 		 }
+		 
+		 $addresses=mysqli_query($connect,"SELECT * FROM address WHERE user_id='$user_id' AND address_isDelete=0; ");
+		 $address_num=mysqli_num_rows($addresses)
 	  ?>
 	  
      <span class="grand-total"> Grand total : RM<?php echo number_format($total,2,'.',''); ?> </span>
@@ -242,7 +245,24 @@ processed. All information exchange is secured.</p>
 <p>Email:
 <input type="email" id="email" name="email" placeholder="Your Email" required></p>
 <p>Address:
-<input type="text" id="adr" name="address" placeholder="Your Address"required></p>
+<input type="text" id="adr" name="address" placeholder="Your Address" list="addresses" required></p>
+<?php
+if($address_num>0)
+{
+	?>
+	<datalist id="addresses">
+	<?php
+	while($address_row=mysqli_fetch_assoc($addresses))
+	{
+	?>
+	<option value="<?php echo $address_row['receiver_address']; ?>"> <?php echo $address_row['receiver_address']; ?> </option>
+<?php
+	}
+	?>
+	</datalist>
+	<?php
+}
+?>
 <p>City:
 <input type="text" id="city" name="city" placeholder="City" required></p>
 Card Type :
