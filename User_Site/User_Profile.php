@@ -63,14 +63,14 @@
 	$user_phone_valid=1; 
 
 
-	if(isset($_GET['save']))
+	if(isset($_POST['save']))
 	{
 		
-		$updated_name = $_GET["updated_name"];
-		$updated_email = $_GET["updated_email"];
-		$updated_phone_no = $_GET["phone_no"];
-		$updated_gender = $_GET["updated_gender"];
-		$updated_birthday = date('Y-m-d', strtotime($_GET["updated_birthday"]));
+		$updated_name = $_POST["updated_name"];
+		$updated_email = $_POST["updated_email"];
+		$updated_phone_no = $_POST["phone_no"];
+		$updated_gender = $_POST["updated_gender"];
+		$updated_birthday = date('Y-m-d', strtotime($_POST["updated_birthday"]));
 		
 		
 
@@ -211,7 +211,7 @@
 			<h3>My Profile</h3>
 			</div>
 
-			<form name="edit_profile" id="form" method="get">
+			<form name="edit_profile" id="form" method="POST">
 			<p>
 			Username
 			<br>	

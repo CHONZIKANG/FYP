@@ -210,12 +210,7 @@
 		<br>
 		<input type="password" name="useracc_pass" id="acc_password"  size="50" >
 		<br>
-		<?php if(isset($_GET['save']))
-				{
-					if(empty($current_pass)){  ?><span id="alert_msg"><?php  echo "Please fill up your current password! "?> </span><?php }
-					else if($valid==0){?><span id="alert_msg"><?php  echo "Password is incorrect!"?> </span>
-								<?php }
-				}?>
+
 		</p>
 
 		<p>
@@ -227,9 +222,7 @@
 		*Password must contain 8 or more characters, one number, one uppercase and lowercase letter. 
 		</span>
 		<br>
-		<?php if(isset($_GET['save']))
-				{
-					if(empty($new_pass)){  ?><span id="alert_msg"><?php  echo "Please fill up your new password! "?> </span><?php }}?> 
+		
 
 		</p>
 
@@ -239,12 +232,7 @@
 		<br>
 		<input type="password" id="confirm_password" name="confirm_password" size="50" >
 		<br>
-		<?php if(isset($_GET['save']))
-				{
-					if(empty($confirm_pass)){  ?><span id="alert_msg"><?php  echo "Please recomfirm your new password! "?> </span><?php }?> 
-					<?php if($new_pass_valid==0){?><span id="alert_msg"><?php  echo "Password entered is different!"?> </span>
-								<?php }
-				}?>
+
 				
 		<br>
 

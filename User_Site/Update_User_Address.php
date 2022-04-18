@@ -10,7 +10,7 @@ if(!isset($_SESSION['userid']))
 {
 	header("Location:Login.php");
 }
-
+$error="";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +43,44 @@ if(!isset($_SESSION['userid']))
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Roboto&display=swap" rel="stylesheet">
 	
 	<link rel="stylesheet" href="assets/css/Update_User_Address_css.css">
+		<?php
+if(isset($_POST["savebtn"]))
+{
+	$updated_name=$_POST['update_name'];
+	$updated_phone=$_POST['update_name_phoneno'];
+	$updated_address=$_POST['update_address'];
+	
+	
+	
+	$complete=0;
+	
+	if(empty($receiver_name)||empty($updated_phone)||empty($updated_address))
+	{
+		$error="Please fill up every field.";
+	}
+	
+	if($updated_name && $updated_phone && $updated_address)
+	{
+		
+		$complete=mysqli_query($connect,"UPDATE address SET receiver_name='$updated_name', receiver_phone_number='$updated_phone', receiver_address='$updated_address' WHERE address_id='$address_id'");
+	}
+	
+	
+	
+	
+	
+	if($complete)
+	{
+		header("location:User_Address.php"); //redirect user back to productlist.php
+	}
+	
+	
+	
+	
+}
 
+
+?>
   </head>
 
   <body>
@@ -145,25 +182,19 @@ if(!isset($_SESSION['userid']))
 		<div id="right">
 		<form id="form" method="post">
 		<div id="title">
+		
+		
 		<h3>Update Address</h3>
 		</div>
-		<br>
-		<br>
 
+		<span id="error" style="color:red; font-size:14px;"><?php echo $error;?></span>
 		<p>
 		Fullname
 		<br>	
 		<br>
 		<input type="text" name="update_name" size="50" maxlength="30"  value="<?php echo $row['receiver_name']?>">
 
-		<?php if(isset($_POST['savebtn']))
-					{
-						if(empty($receiver_name))
-						{?>
-						<span id="error" style="color:red; font-size:14px;"><?php echo "Please enter your name." ?> </span>
-						<?php 
-						}	
-					}?>
+		
 		</p>
 
 		<p>
@@ -171,14 +202,7 @@ if(!isset($_SESSION['userid']))
 		<br>	
 		<br>
 		<input type="tel" name="update_name_phoneno" id="p_number" pattern="[0]{1}[1]{1}[0-9]{1}-[0-9]{3}[0-9]{4}" value="<?php echo $row['receiver_phone_number']?>">
-		<?php if(isset($_POST['savebtn']))
-					{
-						if(empty($updated_phone))
-						{?>
-						<span id="error" style="color:red; font-size:14px;"><?php echo "Please enter your phone number." ?> </span>
-						<?php 
-						}	
-					}?>
+		
 		</p>
 
 		<p>
@@ -186,14 +210,7 @@ if(!isset($_SESSION['userid']))
 		<br>	
 		<br>	
 		<input type="text" name="update_address" size="50" maxlength="80" value="<?php echo $row['receiver_address']?>">
-		<?php if(isset($_POST['savebtn']))
-					{
-						if(empty($updated_address))
-						{?>
-						<span id="error" style="color:red; font-size:14px;"><?php echo "Please enter your delivery address." ?> </span>
-						<?php 
-						}	
-					}?>
+		
 		</p>
 
 		<br>
@@ -204,39 +221,7 @@ if(!isset($_SESSION['userid']))
 		</div>
 
 		</div>
-		<?php
-if(isset($_POST["savebtn"]))
-{
-	$updated_name=$_POST['update_name'];
-	$updated_phone=$_POST['update_name_phoneno'];
-	$updated_address=$_POST['update_address'];
-	
-	
-	
-	$complete=0;
-	
-	if($updated_name && $updated_phone && $updated_address)
-	{
-		
-		$complete=mysqli_query($connect,"UPDATE address SET receiver_name='$updated_name', receiver_phone_number='$updated_phone', receiver_address='$updated_address' WHERE address_id='$address_id'");
-	}
-	
-	
-	
-	
-	
-	if($complete)
-	{
-		header("location:User_Address.php"); //redirect user back to productlist.php
-	}
-	
-	//mysqli_close($connect);
-	
-	
-}
 
-
-?>
     </div>
     <!-- About Page Ends Here -->
 
