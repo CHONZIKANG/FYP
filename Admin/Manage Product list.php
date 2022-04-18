@@ -37,7 +37,7 @@ $admin_ID=$_SESSION['adminid'];
 	
 	<link rel="stylesheet" href="css/Product.css">
 	
-	<link rel="stylesheet" href="view_product_list1.css">
+	<link rel="stylesheet" href="view_product_list.css">
 	<script>
 function confirmation()
 {
