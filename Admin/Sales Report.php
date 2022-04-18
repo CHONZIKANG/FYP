@@ -137,7 +137,7 @@ body {
 		
 <br>
 
-<div style="background-color:white; border-radius:30px; padding:50px; width:1425px;">
+<div style="background-color:white; border-radius:30px; padding:50px; margin:auto;">
 
 <h1>Sales Report 2022 Electronic Gadget Store </h1>
     <div class="outer-wrapper">
