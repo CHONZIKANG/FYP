@@ -37,7 +37,7 @@ $admin_ID=$_SESSION['adminid'];
 	
 	<link rel="stylesheet" href="css/Product.css">
 	
-	<link rel="stylesheet" href="view_product_list.css">
+	<link rel="stylesheet" href="css/view_product_list.css">
 	<script>
 function confirmation()
 {
@@ -53,6 +53,7 @@ body {
 	  
   background-image: url('img/dash-bg-03.jpg');
 }
+
 </style>
 	
 </head>
@@ -101,7 +102,6 @@ body {
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 										<a class="dropdown-item" href="Manage Product list.php">View Product</a>
                                         <a class="dropdown-item" href="Add_Product.php">Add Product</a>
-										<a class="dropdown-item" href="Update Product.php">Update Product</a>
 										<a class="dropdown-item" href="Manage_Category.php">Category</a>
 										
 
@@ -135,7 +135,7 @@ body {
 	<br>
 	<br>
 <form>	
-<div style="background-color:white; border-radius:30px; padding:50px; width:1425px;">
+<div style="background-color:white; border-radius:30px; padding:50px;">
 <div style="margin:auto; ">
 
 <h1>View Product List</h1>

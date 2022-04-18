@@ -38,7 +38,7 @@ $admin_ID=$_SESSION['adminid'];
     <!-- https://getbootstrap.com/ -->
     <link rel="stylesheet" href="css/tooplate.css">
 
-	<link rel="stylesheet" href="view_product_list1.css">
+	<link rel="stylesheet" href="css/view_product_list.css">
 <script>
 function confirmation()
 {
@@ -80,7 +80,7 @@ body {
                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mx-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="index.html">Dashboard
+                                    <a class="nav-link" href="dashboard.php">Dashboard
                                         <span class="sr-only">(current)</span>
                                     </a>
                                 </li>
@@ -104,7 +104,6 @@ body {
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 										<a class="dropdown-item" href="Manage Product list.php">View Product</a>
                                         <a class="dropdown-item" href="Add_Product.php">Add Product</a>
-										<a class="dropdown-item" href="Update Product.php">Update Product</a>
 										<a class="dropdown-item" href="Manage_Category.php">Category</a>
 										
 
@@ -136,7 +135,7 @@ body {
 		
 <br>
 
-<div style="background-color:white; border-radius:30px; padding:50px; width:1425px;">
+<div style="background-color:white; border-radius:30px; padding:50px;margin:auto;">
 
 <h2>View Order Detail</h2>
     <div class="outer-wrapper">
@@ -191,8 +190,8 @@ body {
 				<td><?php echo $row["order_Status"];?></td>
 				<td><?php echo $row["order_Shipping"];?></td>
 				<td><?php echo $row["order_tracking"];?></td>
-				<td><a href="Update order list.php?id=<?php echo $row ['order_id']?>">Edit</td>
-				<td><a href="Manage order list.php?delete&id=<?php echo $row ['order_id']?>" onclick="return confirmation()">Delete<td>
+				<td><a href="Update Order list.php?id=<?php echo $row ['order_id']?>">Edit</td>
+				<td><a href="Manage Order list.php?delete&id=<?php echo $row ['order_id']?>" onclick="return confirmation()">Delete<td>
 				
             </tr>
 		<?php

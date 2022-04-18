@@ -11,13 +11,12 @@ $admin_ID=$_SESSION['adminid'];
 if(isset($_GET["id"]))
 {
 	$order=$_GET["id"];
-	$result=mysqli_query($connect,"SELECT * from orderdetail WHERE order_id='$order'");
+	$result=mysqli_query($connect,"SELECT * from order_list WHERE order_id='$order'");
 	$row=mysqli_fetch_assoc($result);
 }
 if(isset($_POST["update_button"]))
 {
 	$Uorder_id=$_POST["Uorder_id"];
-	$Uorder_number=$_POST["Uorder_number"];
 	$Ucustomer_ID=$_POST["Ucustomer_ID"];
 	$Uproduct_name=$_POST["Uproduct_name"];
 	$Uproduct_stock=$_POST["Uproduct_stock"];
@@ -30,9 +29,8 @@ if(isset($_POST["update_button"]))
 	$Payment_method=$_POST["Payment_method"];
 	$Shipping_option=$_POST["Shipping_option"];
 	
-	mysqli_query($connect,"UPDATE orderdetail SET 
+	mysqli_query($connect,"UPDATE order_list SET 
 	order_id='$Uorder_id', 
-	order_number='$Uorder_number',
 	customer_id='$Ucustomer_ID',
 	order_product_name='$Uproduct_name',
 	order_quantity='$Uproduct_stock',
@@ -46,7 +44,7 @@ if(isset($_POST["update_button"]))
 	order_Shipping='$Shipping_option'");
 	
 }
-
+header("refresh:0; location:Update Order list.php");
 mysqli_close($connect);
 ?>
 <!DOCTYPE html>
@@ -73,8 +71,6 @@ mysqli_close($connect);
     <link rel="stylesheet" href="css/tooplate.css">
 	
 	<link rel="stylesheet" href="css/Update.css">
-	
-	<link rel="stylesheet" href="css/view_product_list1.css">
 	
 
 <style>
@@ -104,7 +100,7 @@ body {
                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mx-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="index.html">Dashboard
+                                    <a class="nav-link" href="dashboard.php">Dashboard
                                         <span class="sr-only">(current)</span>
                                     </a>
                                 </li>
@@ -128,7 +124,6 @@ body {
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 										<a class="dropdown-item" href="Manage Product list.php">View Product</a>
                                         <a class="dropdown-item" href="Add_Product.php">Add Product</a>
-										<a class="dropdown-item" href="Update Product.php">Update Product</a>
 										<a class="dropdown-item" href="Manage_Category.php">Category</a>
 										
 
@@ -173,9 +168,6 @@ body {
 Customer ID:<br>
 <input type="text" name="Uorder_id" value="<?php echo $row["order_id"];?>"required  >
 </p>
-Update Order Number:<br>
-<input type="text" name="Uorder_number" size="50" maxlength="45" value="<?php echo $row["order_number"];?>"required  >
-</p>
 <p>
 Update Customer ID:<br>
 <input type="text" name="Ucustomer_ID" size="50" maxlength="45" value="<?php echo $row["customer_id"];?>"required >
@@ -195,7 +187,7 @@ Update Unit Price:<br>
 </p>
 
 <p>
-Update Total (included shipping fee):<br>
+Update Total:<br>
 <input type="text" name="Utotal" size="50" maxlength="45"value="<?php echo $row["order_Total"];?>"required >
 </p>
 
