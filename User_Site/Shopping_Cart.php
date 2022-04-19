@@ -49,11 +49,11 @@ if(!isset($_SESSION['userid']))
 
 	$atc_list=mysqli_query($connect,"SELECT * FROM cart WHERE user_id='$u_id'");//
 
-	$count=mysqli_num_rows($atc_list);//
+	$count=mysqli_num_rows($atc_list);
 
-	$selected_count=0;//
+	$selected_count=0;
 	
-	$finaltotal=0;//
+	$finaltotal=0;
 	
 	$x=0;
 	
@@ -196,7 +196,6 @@ if(!isset($_SESSION['userid']))
 				while($prod_row=mysqli_fetch_assoc($product_list))
 				{					
 					$product_picture="assets/images/".$prod_row['product_image'];
-					//$product_picture="assets/images/".$prod_row['product_image'];
 					
 					
 
@@ -260,7 +259,7 @@ if(!isset($_SESSION['userid']))
 
 		<?php
 					$finaltotal+=$total;
-					$x++;//dunno
+					$x++;
 				
 				}
 				

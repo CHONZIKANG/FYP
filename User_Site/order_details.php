@@ -53,17 +53,12 @@ if(isset($_GET['details']))
 	
 	$purchase_id=$_GET['id'];
 	
-	//echo $purchase_id;
 	
 	$result=mysqli_query($connect,"SELECT * FROM order_list WHERE order_id='$purchase_id'");
 	
 	$row=mysqli_fetch_assoc($result);
 	
-	//$address_id=$row['address_id'];
-	
-	//$address=mysqli_query($connect,"SELECT * FROM address WHERE address_id='$address_id'");
-	
-	//$address_row=mysqli_fetch_assoc($address);
+
 	
 }
 
@@ -190,11 +185,6 @@ if(isset($_GET['details']))
 	</div>
 	<?php
 	
-	//$prod_id=$row['product_id'];
-	
-	//$product=mysqli_query($connect,"SELECT * FROM product WHERE product_id='$prod_id'");
-	
-	//$prod_row=mysqli_fetch_assoc($product);
 	
 	$product_picture="assets/images/".$row['order_image'];
 	

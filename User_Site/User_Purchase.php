@@ -187,12 +187,7 @@ $count=mysqli_num_rows($purchase);
 	<?php
 		while($row=mysqli_fetch_assoc($purchase))
 		{
-			//$prod_id=$row['product_id'];
 			
-			//$product=mysqli_query($connect,"SELECT * FROM product WHERE product_id='$prod_id'");
-			
-			//while($line=mysqli_fetch_assoc($product))
-			//{
 				$product_picture="assets/images/".$row['order_image'];
 
 
@@ -253,7 +248,7 @@ $count=mysqli_num_rows($purchase);
 	</div>
 
 	<?php
-		//}
+
 		}
 		}
 
